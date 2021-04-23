@@ -401,6 +401,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="U4r-sR-5f0"/>
                         <constraints>
                             <constraint firstItem="cJP-pn-6bf" firstAttribute="leading" secondItem="PNZ-JK-lUv" secondAttribute="leading" id="0Om-8F-uwa"/>
                             <constraint firstItem="EYU-n9-CbM" firstAttribute="top" secondItem="PNZ-JK-lUv" secondAttribute="top" id="1S3-H3-qeS"/>
@@ -431,10 +432,10 @@
             </objects>
             <point key="canvasLocation" x="2681.1594202898555" y="127.90178571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Success View Controller-->
         <scene sceneID="pf3-Y5-97P">
             <objects>
-                <viewController id="R9O-Sb-aq6" sceneMemberID="viewController">
+                <viewController id="R9O-Sb-aq6" customClass="SuccessViewController" customModule="Galactic_Holidays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iJ7-OH-dz4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -451,13 +452,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kc8-hB-3DI">
+                                <rect key="frame" x="20" y="798" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dGL-LS-mps"/>
+                                </constraints>
+                                <state key="normal" title="Go back home"/>
+                                <connections>
+                                    <action selector="homePressed" destination="R9O-Sb-aq6" eventType="touchUpInside" id="Ivh-kL-9to"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kYW-Gc-x7H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kYW-Gc-x7H" firstAttribute="bottom" secondItem="Kc8-hB-3DI" secondAttribute="bottom" constant="20" id="Hhy-DO-RD3"/>
                             <constraint firstItem="qRF-GE-xV6" firstAttribute="leading" secondItem="kYW-Gc-x7H" secondAttribute="leading" constant="20" id="JSD-7j-ZKU"/>
+                            <constraint firstItem="Kc8-hB-3DI" firstAttribute="leading" secondItem="kYW-Gc-x7H" secondAttribute="leading" constant="20" id="Tbz-Zh-VKx"/>
                             <constraint firstItem="kYW-Gc-x7H" firstAttribute="trailing" secondItem="qRF-GE-xV6" secondAttribute="trailing" constant="20" id="bZb-KF-iDC"/>
                             <constraint firstItem="uHi-ow-Ae7" firstAttribute="leading" secondItem="kYW-Gc-x7H" secondAttribute="leading" constant="20" id="e8l-rb-shK"/>
+                            <constraint firstItem="kYW-Gc-x7H" firstAttribute="trailing" secondItem="Kc8-hB-3DI" secondAttribute="trailing" constant="20" id="i7f-LV-csT"/>
                             <constraint firstItem="kYW-Gc-x7H" firstAttribute="trailing" secondItem="uHi-ow-Ae7" secondAttribute="trailing" constant="20" id="nvG-jZ-5TP"/>
                             <constraint firstItem="uHi-ow-Ae7" firstAttribute="top" secondItem="kYW-Gc-x7H" secondAttribute="top" constant="20" id="ph8-Rq-kTB"/>
                             <constraint firstItem="qRF-GE-xV6" firstAttribute="top" secondItem="uHi-ow-Ae7" secondAttribute="bottom" constant="20" id="tm3-UL-z37"/>

@@ -84,7 +84,7 @@ class BookingViewController: UIViewController {
     private func showFormError() {
         alert = CustomModalAlert(frame: view.frame)
         alert!.delegate = self
-        alert!.message = "Check form"
+        alert!.message = "There is an error in the form."
         alert!.center = view.center
         view.addSubview(alert!)
     }
@@ -119,26 +119,21 @@ class BookingViewController: UIViewController {
                 if email != confirmEmail { return false }
                 if !email.contains("@") { return false }
                 if !confirmEmail.contains("@") { return false }
-                if !email.contains(".com") { return false }
-                if !confirmEmail.contains(".com") { return false }
 
                 if name.count < 3 { return false }
 
-                if cardNumber.count != 19 { return false }
-                if !charAt(location: 4, is: " ", in: cardNumber) { return false }
-                if !charAt(location: 9, is: " ", in: cardNumber) { return false }
-                if !charAt(location: 14, is: " ", in: cardNumber) { return false }
+                if cardNumber.count != 16 { return false }
 
                 if cvv.count != 3 { return false }
                 if cvv.rangeOfCharacter(from: .lowercaseLetters) != .none { return false }
 
                 if sortCode.count != 8 { return false }
-                if !charAt(location: 3, is: "-", in: sortCode) { return false }
-                if !charAt(location: 6, is: "-", in: sortCode) { return false }
+                if !charAt(location: 2, is: "-", in: sortCode) { return false }
+                if !charAt(location: 5, is: "-", in: sortCode) { return false }
 
                 if dob.count != 10 { return false }
-                if !charAt(location: 3, is: "/", in: dob) { return false }
-                if !charAt(location: 6, is: "/", in: dob) { return false }
+                if !charAt(location: 2, is: "/", in: dob) { return false }
+                if !charAt(location: 5, is: "/", in: dob) { return false }
 
         return true
     }

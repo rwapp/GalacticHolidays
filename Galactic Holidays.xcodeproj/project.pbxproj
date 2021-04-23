@@ -20,6 +20,7 @@
 		B5A67F7A25375CBE00D256B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A67F7825375CBE00D256B1 /* LaunchScreen.storyboard */; };
 		B5A67F8325375E8E00D256B1 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A67F8225375E8E00D256B1 /* Destination.swift */; };
 		B5A67F8D2537620C00D256B1 /* HolidayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A67F8C2537620C00D256B1 /* HolidayData.swift */; };
+		B5DEFFF92633622A004F53B7 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEFFF82633622A004F53B7 /* SuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B5A67F7B25375CBE00D256B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5A67F8225375E8E00D256B1 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		B5A67F8C2537620C00D256B1 /* HolidayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayData.swift; sourceTree = "<group>"; };
+		B5DEFFF82633622A004F53B7 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				B51694BB2537684600423357 /* DetailViewController.swift */,
 				B50854B2253DF3CD001D47D2 /* BookingViewController.swift */,
 				B58EB9632550930300D1367F /* CustomModalAlert.swift */,
+				B5DEFFF82633622A004F53B7 /* SuccessViewController.swift */,
 				B58EB9662550932600D1367F /* CustomModalAlert.xib */,
 				B50854B5253DF86E001D47D2 /* TextField.swift */,
 				B5A67F7325375CB800D256B1 /* Main.storyboard */,
@@ -196,6 +199,7 @@
 				B51694BC2537684600423357 /* DetailViewController.swift in Sources */,
 				B5A67F8325375E8E00D256B1 /* Destination.swift in Sources */,
 				B50854B3253DF3CD001D47D2 /* BookingViewController.swift in Sources */,
+				B5DEFFF92633622A004F53B7 /* SuccessViewController.swift in Sources */,
 				B5A67F7025375CB800D256B1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
