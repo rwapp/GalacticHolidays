@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         holidaysTable.delegate = self
 
         holidaysTable.tableFooterView = UIView()
+
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

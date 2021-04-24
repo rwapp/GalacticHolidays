@@ -22,7 +22,7 @@ class TextField: UITextField {
         line?.removeFromSuperview()
         let lineFrame = CGRect(x: 0, y: frame.size.height - 1, width: frame.size.width, height: 1)
         let line = UIView(frame: lineFrame)
-        line.backgroundColor = .blue
+        line.backgroundColor = UIColor(named: "brand")
 
         addSubview(line)
         self.line = line
