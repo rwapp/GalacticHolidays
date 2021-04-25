@@ -9,7 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var destination: Destination?
+    var selection: Int?
+    var data: HolidayData?
 
     @IBOutlet private weak var heading: UILabel!
     @IBOutlet private weak var subHeading: UILabel!
@@ -19,20 +20,20 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var detail: UILabel!
     @IBOutlet private weak var likeImage: UIImageView!
     @IBOutlet private weak var promoView: UIView!
-
-    private var liked = false
+    @IBOutlet private weak var popularView: UIView!
+    @IBOutlet private weak var popularIcon: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let destination = destination else { return }
+        guard let destination = data?.holidays[selection ?? 0] else { return }
 
         heading.text = destination.name
         subHeading.text = destination.subtitle
         heroImage.image = UIImage(named: "\(destination.name)-hero")
 
         distance.text = "\(destination.distance)M km"
-        rating.text = formattedRating()
+        rating.attributedText = formattedRating()
 
         detail.text = destination.description
 
@@ -41,6 +42,7 @@ class DetailViewController: UIViewController {
 
         setupLike()
         growPromo()
+        setupPopular()
     }
 
     private func setupLike() {
@@ -50,8 +52,17 @@ class DetailViewController: UIViewController {
         likeImage.addGestureRecognizer(tapGesture)
     }
 
+    private func setupPopular() {
+        guard let destination = data?.holidays[selection ?? 0] else { return }
+        popularView.isHidden = destination.rating < 5
+        popularIcon.image = UIImage(systemName: "exclamationmark.triangle")
+        popularIcon.isAccessibilityElement = true
+        popularIcon.accessibilityLabel = "Warning triangle"
+    }
+
     private func setLikeImage() {
-        let heartImage = UIImage(systemName: liked ? "heart.fill" : "heart")
+        guard let destination = data?.holidays[selection ?? 0] else { return }
+        let heartImage = UIImage(systemName: destination.favourite ? "star.fill" : "star")
         likeImage.image = heartImage
     }
 
@@ -77,21 +88,32 @@ class DetailViewController: UIViewController {
 
     @objc
     func toggleLike() {
-        liked.toggle()
+        data?.holidays[selection ?? 0].favourite.toggle()
         setLikeImage()
     }
 
-    private func formattedRating() -> String {
-        guard let rating = destination?.rating else { return "☆ ☆ ☆ ☆ ☆" }
+    private func formattedRating() -> NSAttributedString {
 
-        var formatted = ""
-        for _ in 0..<rating {
-            formatted.append("⭐️ ")
+        let star = NSTextAttachment()
+        star.image = UIImage(systemName: "star")?
+            .withTintColor(.orange)
+        let starString = NSAttributedString(attachment: star)
+
+        let starFill = NSTextAttachment()
+        starFill.image = UIImage(systemName: "star.fill")?
+            .withTintColor(.orange)
+        let starFillString = NSAttributedString(attachment: starFill)
+
+        guard let destination = data?.holidays[selection ?? 0] else { return NSAttributedString() }
+
+        let formatted = NSMutableAttributedString()
+        for _ in 0..<destination.rating {
+            formatted.append(starFillString)
         }
 
-        let padding = 5 - rating
+        let padding = 5 - destination.rating
         for _ in 0..<padding {
-            formatted.append("☆ ")
+            formatted.append(starString)
         }
 
         return formatted

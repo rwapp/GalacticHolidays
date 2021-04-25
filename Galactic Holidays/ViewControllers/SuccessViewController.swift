@@ -18,7 +18,7 @@ class SuccessViewController: UIViewController {
         imageView.image = image
         imageView.tintColor = .white
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)

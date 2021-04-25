@@ -19,6 +19,7 @@ class BookingViewController: UIViewController {
     @IBOutlet weak private var dobField: TextField!
     @IBOutlet weak private var loadingView: UIView!
     @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var clearButton: UIButton!
 
     private var timer: Timer?
     weak var activeField: UITextField?
@@ -53,6 +54,7 @@ class BookingViewController: UIViewController {
                                                object: nil)
 
         idleTimer()
+        setupRefreshButton()
     }
 
     private func idleTimer() {
@@ -89,6 +91,13 @@ class BookingViewController: UIViewController {
         view.addSubview(alert!)
     }
 
+    private func setupRefreshButton() {
+        let refresh = NSTextAttachment()
+        refresh.image = UIImage(systemName: "arrow.clockwise")
+
+        clearButton.setAttributedTitle(NSAttributedString(attachment: refresh), for: .normal)
+    }
+
     private func clearTextFields() {
         eachTextField(view) {
             $0.text = nil
@@ -108,32 +117,32 @@ class BookingViewController: UIViewController {
     }
 
     private func checkFormValid() -> Bool {
-                guard let email = emailField.text,
-                      let confirmEmail = confirmEmailField.text,
-                      let name = nameField.text,
-                      let cardNumber = cardNumberField.text,
-                      let cvv = cvvField.text,
-                      let sortCode = sortCodeField.text,
-                      let dob = dobField.text else { return false }
+        guard let email = emailField.text,
+              let confirmEmail = confirmEmailField.text,
+              let name = nameField.text,
+              let cardNumber = cardNumberField.text,
+              let cvv = cvvField.text,
+              let sortCode = sortCodeField.text,
+              let dob = dobField.text else { return false }
 
-                if email != confirmEmail { return false }
-                if !email.contains("@") { return false }
-                if !confirmEmail.contains("@") { return false }
+        if email != confirmEmail { return false }
+        if !email.contains("@") { return false }
+        if !confirmEmail.contains("@") { return false }
 
-                if name.count < 3 { return false }
+        if name.count < 3 { return false }
 
-                if cardNumber.count != 16 { return false }
+        if cardNumber.count != 16 { return false }
 
-                if cvv.count != 3 { return false }
-                if cvv.rangeOfCharacter(from: .lowercaseLetters) != .none { return false }
+        if cvv.count != 3 { return false }
+        if cvv.rangeOfCharacter(from: .lowercaseLetters) != .none { return false }
 
-                if sortCode.count != 8 { return false }
-                if !charAt(location: 2, is: "-", in: sortCode) { return false }
-                if !charAt(location: 5, is: "-", in: sortCode) { return false }
+        if sortCode.count != 8 { return false }
+        if !charAt(location: 2, is: "-", in: sortCode) { return false }
+        if !charAt(location: 5, is: "-", in: sortCode) { return false }
 
-                if dob.count != 10 { return false }
-                if !charAt(location: 2, is: "/", in: dob) { return false }
-                if !charAt(location: 5, is: "/", in: dob) { return false }
+        if dob.count != 10 { return false }
+        if !charAt(location: 2, is: "/", in: dob) { return false }
+        if !charAt(location: 5, is: "/", in: dob) { return false }
 
         return true
     }
@@ -151,6 +160,11 @@ class BookingViewController: UIViewController {
         } else {
             showFormError()
         }
+    }
+
+    @IBAction
+    private func clearPressed() {
+        clearTextFields()
     }
 
     private func processBooking() {
@@ -172,7 +186,7 @@ class BookingViewController: UIViewController {
     func keyboardDidShow(notification: Notification) {
         guard let keyboardRect: CGRect = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else { return }
         let keyboardHeight = keyboardRect.size.height
-
+        
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         scrollView.contentInset = insets
         scrollView.scrollIndicatorInsets = insets
