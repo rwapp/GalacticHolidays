@@ -93,7 +93,7 @@ extension ViewController: UITableViewDataSource {
         cell.accessibilityLabel = "Holiday"
 
         let image = UIImage(systemName: "star.fill")?.withRenderingMode(.alwaysTemplate)
-        
+
         let imageView = UIImageView(image: image)
 
         if item.favourite {

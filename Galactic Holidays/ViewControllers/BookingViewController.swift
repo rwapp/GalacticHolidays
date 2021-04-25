@@ -186,7 +186,7 @@ class BookingViewController: UIViewController {
     func keyboardDidShow(notification: Notification) {
         guard let keyboardRect: CGRect = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else { return }
         let keyboardHeight = keyboardRect.size.height
-        
+
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         scrollView.contentInset = insets
         scrollView.scrollIndicatorInsets = insets

@@ -23,8 +23,6 @@
 		B5DEFFF92633622A004F53B7 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEFFF82633622A004F53B7 /* SuccessViewController.swift */; };
 		B5FE53422634381B00559FAE /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE53402634381B00559FAE /* ImageCollectionViewCell.swift */; };
 		B5FE53432634381B00559FAE /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FE53412634381B00559FAE /* ImageCollectionViewCell.xib */; };
-		B5FE534A2634434400559FAE /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE53482634434400559FAE /* PlanetTableViewCell.swift */; };
-		B5FE534B2634434400559FAE /* PlanetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FE53492634434400559FAE /* PlanetTableViewCell.xib */; };
 		B5FE5351263484D200559FAE /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE5350263484D200559FAE /* Button.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +45,6 @@
 		B5DEFFF82633622A004F53B7 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		B5FE53402634381B00559FAE /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5FE53412634381B00559FAE /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
-		B5FE53482634434400559FAE /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
-		B5FE53492634434400559FAE /* PlanetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetTableViewCell.xib; sourceTree = "<group>"; };
 		B5FE5350263484D200559FAE /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,8 +107,6 @@
 				B58EB9662550932600D1367F /* CustomModalAlert.xib */,
 				B5FE53402634381B00559FAE /* ImageCollectionViewCell.swift */,
 				B5FE53412634381B00559FAE /* ImageCollectionViewCell.xib */,
-				B5FE53482634434400559FAE /* PlanetTableViewCell.swift */,
-				B5FE53492634434400559FAE /* PlanetTableViewCell.xib */,
 				B5A67F7825375CBE00D256B1 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -137,7 +131,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5A67F7E25375CBE00D256B1 /* Build configuration list for PBXNativeTarget "Galactic Holidays" */;
 			buildPhases = (
-				B5A67F8525375F0400D256B1 /* ShellScript */,
 				B5A67F6625375CB800D256B1 /* Sources */,
 				B5A67F6725375CB800D256B1 /* Frameworks */,
 				B5A67F6825375CB800D256B1 /* Resources */,
@@ -189,7 +182,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A67F7A25375CBE00D256B1 /* LaunchScreen.storyboard in Resources */,
-				B5FE534B2634434400559FAE /* PlanetTableViewCell.xib in Resources */,
 				B58EB9672550932600D1367F /* CustomModalAlert.xib in Resources */,
 				B5A67F7725375CBE00D256B1 /* Assets.xcassets in Resources */,
 				B5A67F7525375CB800D256B1 /* Main.storyboard in Resources */,
@@ -198,26 +190,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B5A67F8525375F0400D256B1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5A67F6625375CB800D256B1 /* Sources */ = {
@@ -236,7 +208,6 @@
 				B5DEFFF92633622A004F53B7 /* SuccessViewController.swift in Sources */,
 				B5A67F7025375CB800D256B1 /* SceneDelegate.swift in Sources */,
 				B5FE5351263484D200559FAE /* Button.swift in Sources */,
-				B5FE534A2634434400559FAE /* PlanetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
