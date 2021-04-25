@@ -16,7 +16,14 @@ class CustomModalAlert: UIView {
 
     weak var delegate: CustomModalAlertDelegate?
 
+    var message: String? {
+        didSet {
+            messageLabel.text = message
+        }
+    }
+
     @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)

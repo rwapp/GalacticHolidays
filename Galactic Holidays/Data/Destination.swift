@@ -16,4 +16,6 @@ struct Destination {
     var distance: Int
     var temp: Int
     var rating: Int
+    var favourite: Bool = false
+    var imageDescription: String
 }
