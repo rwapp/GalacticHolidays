@@ -21,6 +21,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         didSet {
             imageView.isAccessibilityElement = true
             imageView.accessibilityLabel = imageDescription
+            imageView.accessibilityIgnoresInvertColors = true
         }
     }
 }

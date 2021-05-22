@@ -11,8 +11,11 @@ class ListViewController: UIViewController {
 
     @IBOutlet private weak var holidaysTable: UITableView!
     @IBOutlet private weak var carousel: UICollectionView!
+    @IBOutlet private weak var leftButton: UIButton!
+    @IBOutlet private weak var leftBGView: UIView!
+    @IBOutlet private weak var rightButton: UIButton!
+    @IBOutlet private weak var rightBGView: UIView!
 
-    private var timer: Timer?
     private var counter: Int = 0
 
     private var data = HolidayData()
@@ -27,6 +30,9 @@ class ListViewController: UIViewController {
 
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
+        title = "Destination"
+
+
 
         setupCarousel()
     }
@@ -63,19 +69,42 @@ class ListViewController: UIViewController {
 
         carousel.dataSource = self
 
-        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
+        leftBGView.backgroundColor = UIColor(white: 0, alpha: 0.75)
+        rightBGView.backgroundColor = UIColor(white: 0, alpha: 0.75)
 
-            if self.counter >= self.data.holidays.count {
-                self.counter = 0
-            }
+        let leftAttachment = NSTextAttachment()
+        leftAttachment.image = UIImage(systemName: "chevron.left")?.withTintColor(.white)
+        leftButton.setAttributedTitle(NSAttributedString(attachment: leftAttachment), for: .normal)
+        leftButton.accessibilityLabel = "Scroll left"
 
-            self.carousel.scrollToItem(at: IndexPath(item: self.counter,
-                                                     section: 0),
-                                       at: .centeredHorizontally,
-                                       animated: true)
-            self.counter += 1
-        }
+        let rightAttachment = NSTextAttachment()
+        rightAttachment.image = UIImage(systemName: "chevron.right")?.withTintColor(.white)
+        rightButton.setAttributedTitle(NSAttributedString(attachment: rightAttachment), for: .normal)
+        rightButton.accessibilityLabel = "Scroll right"
+    }
+
+    @IBAction
+    func scrollRight() {
+        let currentIndexPath = carousel.indexPathForItem(at: carousel.contentOffset)
+        guard let item = currentIndexPath?.item,
+              item < data.holidays.count - 1 else { return }
+
+        carousel.scrollToItem(at: IndexPath(item: item + 1,
+                                            section: 0),
+                              at: .centeredHorizontally,
+                              animated: true)
+    }
+
+    @IBAction
+    func scrollLeft() {
+        let currentIndexPath = carousel.indexPathForItem(at: carousel.contentOffset)
+        guard let item = currentIndexPath?.item,
+              item > 0 else { return }
+
+        carousel.scrollToItem(at: IndexPath(item: item - 1,
+                                            section: 0),
+                              at: .centeredHorizontally,
+                              animated: true)
     }
 }
 
@@ -89,20 +118,27 @@ extension ListViewController: UITableViewDataSource {
         let item = data.holidays[indexPath.row]
 
         cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = item.subtitle
-        cell.accessibilityLabel = "Holiday"
+        cell.accessibilityTraits.insert(.button)
+        cell.accessoryType = .disclosureIndicator
 
-        let image = UIImage(systemName: "star.fill")?.withRenderingMode(.alwaysTemplate)
+        cell.textLabel?.numberOfLines = 0
+        cell.detailTextLabel?.numberOfLines = 0
 
-        let imageView = UIImageView(image: image)
+        let starAttachment = NSTextAttachment()
 
         if item.favourite {
-            imageView.tintColor = .orange
+            cell.accessibilityValue = "Favourite destination"
+            starAttachment.image = UIImage(systemName: "star.fill")?.withTintColor(.orange)
+
         } else {
-            imageView.tintColor = .black
+            cell.accessibilityValue = ""
+            starAttachment.image = UIImage(systemName: "star")?.withTintColor(.black)
         }
 
-        cell.accessoryView = imageView
+        let detail = NSMutableAttributedString(attachment: starAttachment)
+        detail.append(NSAttributedString(string: " " + item.subtitle))
+        cell.detailTextLabel?.attributedText = detail
+        cell.detailTextLabel?.accessibilityLabel = item.subtitle
 
         return cell
     }
