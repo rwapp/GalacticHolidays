@@ -14,7 +14,7 @@
 		B58EB9672550932600D1367F /* CustomModalAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58EB9662550932600D1367F /* CustomModalAlert.xib */; };
 		B5A67F6E25375CB800D256B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A67F6D25375CB800D256B1 /* AppDelegate.swift */; };
 		B5A67F7025375CB800D256B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A67F6F25375CB800D256B1 /* SceneDelegate.swift */; };
-		B5A67F7225375CB800D256B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A67F7125375CB800D256B1 /* ViewController.swift */; };
+		B5A67F7225375CB800D256B1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A67F7125375CB800D256B1 /* ListViewController.swift */; };
 		B5A67F7525375CB800D256B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A67F7325375CB800D256B1 /* Main.storyboard */; };
 		B5A67F7725375CBE00D256B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A67F7625375CBE00D256B1 /* Assets.xcassets */; };
 		B5A67F7A25375CBE00D256B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A67F7825375CBE00D256B1 /* LaunchScreen.storyboard */; };
@@ -35,7 +35,7 @@
 		B5A67F6A25375CB800D256B1 /* Galactic Holidays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galactic Holidays.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A67F6D25375CB800D256B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5A67F6F25375CB800D256B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5A67F7125375CB800D256B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5A67F7125375CB800D256B1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B5A67F7425375CB800D256B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5A67F7625375CBE00D256B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5A67F7925375CBE00D256B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			children = (
 				B51694BB2537684600423357 /* DetailViewController.swift */,
 				B50854B2253DF3CD001D47D2 /* BookingViewController.swift */,
-				B5A67F7125375CB800D256B1 /* ViewController.swift */,
+				B5A67F7125375CB800D256B1 /* ListViewController.swift */,
 				B5DEFFF82633622A004F53B7 /* SuccessViewController.swift */,
 				B5A67F7325375CB800D256B1 /* Main.storyboard */,
 			);
@@ -198,7 +198,7 @@
 			files = (
 				B5A67F8D2537620C00D256B1 /* HolidayData.swift in Sources */,
 				B5FE53422634381B00559FAE /* ImageCollectionViewCell.swift in Sources */,
-				B5A67F7225375CB800D256B1 /* ViewController.swift in Sources */,
+				B5A67F7225375CB800D256B1 /* ListViewController.swift in Sources */,
 				B5A67F6E25375CB800D256B1 /* AppDelegate.swift in Sources */,
 				B58EB9642550930300D1367F /* CustomModalAlert.swift in Sources */,
 				B50854B6253DF86E001D47D2 /* TextField.swift in Sources */,
