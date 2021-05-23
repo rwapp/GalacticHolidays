@@ -18,10 +18,15 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var distance: UILabel!
     @IBOutlet private weak var rating: UILabel!
     @IBOutlet private weak var detail: UILabel!
-    @IBOutlet private weak var likeImage: UIImageView!
+    @IBOutlet private weak var likeButton: UIButton!
     @IBOutlet private weak var promoView: UIView!
-    @IBOutlet private weak var popularView: UIView!
-    @IBOutlet private weak var popularIcon: UIImageView!
+    @IBOutlet private weak var titleBG: UIView!
+    @IBOutlet private weak var ratingContainer: UIView!
+    @IBOutlet private weak var distanceContainer: UIView!
+    @IBOutlet private weak var headerContainer: UIView!
+    @IBOutlet private weak var detailStack: UIStackView!
+    @IBOutlet private weak var distanceTitle: UILabel!
+    @IBOutlet private weak var messageStack: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,59 +42,90 @@ class DetailViewController: UIViewController {
 
         detail.text = destination.description
 
-        promoView.layer.cornerRadius = 50
-        promoView.isHidden = !destination.promo
+        setupPromo()
+
+        titleBG.backgroundColor = UIColor(white: 0, alpha: 0.75)
 
         setupLike()
-        growPromo()
         setupPopular()
+        setupContainers()
     }
 
     private func setupLike() {
-        setLikeImage()
+        guard let destination = data?.holidays[selection ?? 0] else { return }
+        let starAttachment = NSTextAttachment()
+        starAttachment.image = UIImage(systemName: destination.favourite ? "star.fill" : "star")?.withTintColor(.orange)
+        let title = "Favourite destination"
+        let buttonTitle = NSMutableAttributedString(string: "\(title): ")
+        buttonTitle.append(NSAttributedString(attachment: starAttachment))
+        likeButton.setAttributedTitle(buttonTitle, for: .normal)
+        likeButton.accessibilityLabel = title
+        likeButton.accessibilityUserInputLabels = ["Favourite destination", "Favourite", "Like", "Star"]
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleLike))
-        likeImage.addGestureRecognizer(tapGesture)
+        if destination.favourite {
+            likeButton.accessibilityTraits.insert(.selected)
+        } else {
+            likeButton.accessibilityTraits.remove(.selected)
+        }
     }
 
     private func setupPopular() {
         guard let destination = data?.holidays[selection ?? 0] else { return }
-        popularView.isHidden = destination.rating < 5
-        popularIcon.image = UIImage(systemName: "exclamationmark.triangle")
-        popularIcon.isAccessibilityElement = true
-        popularIcon.accessibilityLabel = "Warning triangle"
+        if destination.rating == 5 {
+            addMessage("Popular destination")
+        }
     }
 
-    private func setLikeImage() {
+    private func setupPromo() {
+        guard let destination = data?.holidays[selection ?? 0],
+              destination.promo else { return }
+
+        if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
+            addMessage("Only 5 remaining")
+        } else {
+            promoView.layer.cornerRadius = 50
+            promoView.isHidden = false
+        }
+    }
+
+    private func addMessage(_ string: String) {
+        let warningAttachment = NSTextAttachment()
+        warningAttachment.image = UIImage(systemName: "exclamationmark.triangle")
+        let message = NSMutableAttributedString(attachment: warningAttachment)
+        message.append(NSAttributedString(string: " \(string)"))
+        let label = UILabel()
+        label.attributedText = message
+        label.numberOfLines = 0
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.accessibilityLabel = string
+
+        messageStack.addArrangedSubview(label)
+    }
+
+    private func setupContainers() {
         guard let destination = data?.holidays[selection ?? 0] else { return }
-        let heartImage = UIImage(systemName: destination.favourite ? "star.fill" : "star")
-        likeImage.image = heartImage
-    }
+        ratingContainer.isAccessibilityElement = true
+        let stars = destination.rating > 1 ? "stars" : "star"
+        ratingContainer.accessibilityLabel = "Customer rating \(destination.rating) \(stars)"
+        distanceContainer.isAccessibilityElement = true
+        distanceContainer.accessibilityLabel = "Average distance \(destination.distance) million kilometres"
 
-    private func growPromo() {
-        UIView.animate(withDuration: 1, animations: { [weak self] in
-            self?.promoView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        }) { [weak self] _ in
-            UIView.animate(withDuration: 1, animations: {
-                self?.shrinkPromo()
-            })
+        if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
+            detailStack.axis = .vertical
+            distance.textAlignment = .natural
+            distanceTitle.textAlignment = .natural
         }
+
+        headerContainer.isAccessibilityElement = true
+        headerContainer.accessibilityTraits.insert(.header)
+        headerContainer.accessibilityLabel = "\(destination.name). \(destination.subtitle)"
     }
 
-    private func shrinkPromo() {
-        UIView.animate(withDuration: 1, animations: { [weak self] in
-            self?.promoView.transform = CGAffineTransform.identity
-        }) { [weak self] _ in
-            UIView.animate(withDuration: 1, animations: {
-                self?.growPromo()
-            })
-        }
-    }
-
-    @objc
+    @IBAction
     func toggleLike() {
         data?.holidays[selection ?? 0].favourite.toggle()
-        setLikeImage()
+        setupLike()
     }
 
     private func formattedRating() -> NSAttributedString {

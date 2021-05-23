@@ -30,7 +30,7 @@ class ListViewController: UIViewController {
 
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
-        title = "Destination"
+        title = "Destinations"
 
 
 
