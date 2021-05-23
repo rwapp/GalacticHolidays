@@ -36,6 +36,7 @@ class DetailViewController: UIViewController {
         heading.text = destination.name
         subHeading.text = destination.subtitle
         heroImage.image = UIImage(named: "\(destination.name)-hero")
+        heroImage.accessibilityIgnoresInvertColors = true
 
         distance.text = "\(destination.distance)M km"
         rating.attributedText = formattedRating()
