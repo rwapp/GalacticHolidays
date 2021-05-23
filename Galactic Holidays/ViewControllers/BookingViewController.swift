@@ -15,15 +15,18 @@ class BookingViewController: UIViewController {
     @IBOutlet weak private var nameField: UITextField!
     @IBOutlet weak private var cardNumberField: UITextField!
     @IBOutlet weak private var cvvField: UITextField!
-    @IBOutlet weak private var sortCodeField: UITextField!
     @IBOutlet weak private var dobField: UITextField!
     @IBOutlet weak private var loadingView: UIView!
     @IBOutlet weak private var spinnerView: UIView!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var clearButton: UIButton!
+    @IBOutlet weak private var timeRemainingLabel: UILabel!
 
     private var timer: Timer?
     weak var activeField: UITextField?
+
+    private let timeoutInterval = 1200
+    private lazy var timeoutRemaining = timeoutInterval
 
     private var alert: CustomModalAlert? {
         didSet {
@@ -61,12 +64,29 @@ class BookingViewController: UIViewController {
     }
 
     private func idleTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: false) { [weak self] _ in
+
+
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] _ in
             guard let self = self else { return }
 
-            self.showTimeout()
-            self.clearTextFields()
+            self.timeoutRemaining -= 1
+
+            if self.timeoutRemaining == 0 {
+                self.showTimeout()
+            }
+
+            self.idleTimer()
         }
+
+        let minutes: Int = timeoutRemaining / 60
+        let seconds: Int = timeoutRemaining % 60
+
+        var secondsString = "\(seconds)"
+        if secondsString.count == 1 {
+            secondsString.prepend("0")
+        }
+
+        self.timeRemainingLabel.text = "Time remaining: \(minutes):\(secondsString)"
     }
 
     private func bookingTimer() {
@@ -236,5 +256,11 @@ extension BookingViewController: CustomModalAlertDelegate {
         alert?.removeFromSuperview()
         timer?.invalidate()
         idleTimer()
+    }
+}
+
+private extension String {
+    mutating func prepend(_ string: String) {
+        self = "\(string)\(self)"
     }
 }
