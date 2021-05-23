@@ -124,6 +124,8 @@ class BookingViewController: UIViewController {
         refresh.image = UIImage(systemName: "arrow.clockwise")
 
         clearButton.setAttributedTitle(NSAttributedString(attachment: refresh), for: .normal)
+        clearButton.accessibilityLabel = "Reset form"
+        clearButton.accessibilityUserInputLabels = ["Reset form", "Reset", "Refresh", "Clear", "Clear form", "Restart"]
     }
 
     private func clearTextFields() {
