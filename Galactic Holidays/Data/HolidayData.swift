@@ -51,7 +51,7 @@ class HolidayData {
     private let saturn = Destination(name: "Saturn",
                                      subtitle: "We liked it so we put a ring on it.",
                                      price: 1000,
-                                     description: "Saturn is an oblate spheroid. It's equatorial and polar radii differ by almost 10%: 60,268 km versus 54,364 km. Saturn has an intrinsic magnetic field that has a simple, symmetric shape – a magnetic dipole. Its strength at the equator – 20 µT. The average distance between Saturn and the Sun is over 9 AU.",
+                                     description: "With it's iconic rings Saturn makes the ideal romantic honeymoon destination.",
                                      distance: 1200,
                                      temp: -178,
                                      rating: 3,
