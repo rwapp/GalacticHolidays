@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B50854B3253DF3CD001D47D2 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50854B2253DF3CD001D47D2 /* BookingViewController.swift */; };
-		B50854B6253DF86E001D47D2 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50854B5253DF86E001D47D2 /* TextField.swift */; };
 		B51694BC2537684600423357 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51694BB2537684600423357 /* DetailViewController.swift */; };
 		B58EB9642550930300D1367F /* CustomModalAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58EB9632550930300D1367F /* CustomModalAlert.swift */; };
 		B58EB9672550932600D1367F /* CustomModalAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58EB9662550932600D1367F /* CustomModalAlert.xib */; };
@@ -28,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		B50854B2253DF3CD001D47D2 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
-		B50854B5253DF86E001D47D2 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		B51694BB2537684600423357 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B58EB9632550930300D1367F /* CustomModalAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalAlert.swift; sourceTree = "<group>"; };
 		B58EB9662550932600D1367F /* CustomModalAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomModalAlert.xib; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		B5FE534D26345E8F00559FAE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B50854B5253DF86E001D47D2 /* TextField.swift */,
 				B5FE5350263484D200559FAE /* Button.swift */,
 				B58EB9632550930300D1367F /* CustomModalAlert.swift */,
 				B58EB9662550932600D1367F /* CustomModalAlert.xib */,
@@ -201,7 +198,6 @@
 				B5A67F7225375CB800D256B1 /* ListViewController.swift in Sources */,
 				B5A67F6E25375CB800D256B1 /* AppDelegate.swift in Sources */,
 				B58EB9642550930300D1367F /* CustomModalAlert.swift in Sources */,
-				B50854B6253DF86E001D47D2 /* TextField.swift in Sources */,
 				B51694BC2537684600423357 /* DetailViewController.swift in Sources */,
 				B5A67F8325375E8E00D256B1 /* Destination.swift in Sources */,
 				B50854B3253DF3CD001D47D2 /* BookingViewController.swift in Sources */,

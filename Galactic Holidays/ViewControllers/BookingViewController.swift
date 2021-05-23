@@ -10,14 +10,15 @@ import UIKit
 class BookingViewController: UIViewController {
 
     @IBOutlet weak private var submit: UIButton!
-    @IBOutlet weak private var emailField: TextField!
-    @IBOutlet weak private var confirmEmailField: TextField!
-    @IBOutlet weak private var nameField: TextField!
-    @IBOutlet weak private var cardNumberField: TextField!
-    @IBOutlet weak private var cvvField: TextField!
-    @IBOutlet weak private var sortCodeField: TextField!
-    @IBOutlet weak private var dobField: TextField!
+    @IBOutlet weak private var emailField: UITextField!
+    @IBOutlet weak private var confirmEmailField: UITextField!
+    @IBOutlet weak private var nameField: UITextField!
+    @IBOutlet weak private var cardNumberField: UITextField!
+    @IBOutlet weak private var cvvField: UITextField!
+    @IBOutlet weak private var sortCodeField: UITextField!
+    @IBOutlet weak private var dobField: UITextField!
     @IBOutlet weak private var loadingView: UIView!
+    @IBOutlet weak private var spinnerView: UIView!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var clearButton: UIButton!
 
@@ -55,6 +56,8 @@ class BookingViewController: UIViewController {
 
         idleTimer()
         setupRefreshButton()
+
+        title = "Booking"
     }
 
     private func idleTimer() {
@@ -70,7 +73,6 @@ class BookingViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { [weak self] _ in
             guard let self = self else { return }
 
-            self.loadingView.isHidden = false
             self.performSegue(withIdentifier: "bookingComplete", sender: nil)
         }
     }
@@ -168,13 +170,17 @@ class BookingViewController: UIViewController {
     }
 
     private func processBooking() {
+        loadingView.accessibilityViewIsModal = true
+        spinnerView.isAccessibilityElement = true
+        spinnerView.accessibilityLabel = "Booking..."
         loadingView.isHidden = false
+        UIAccessibility.post(notification: .screenChanged, argument: spinnerView)
         bookingTimer()
     }
 
-    private func eachTextField(_ subview: UIView, _ action: (TextField) -> Void) {
+    private func eachTextField(_ subview: UIView, _ action: (UITextField) -> Void) {
         for view in subview.subviews {
-            if let textField = view as? TextField {
+            if let textField = view as? UITextField {
                 action(textField)
             } else {
                 eachTextField(view, action)

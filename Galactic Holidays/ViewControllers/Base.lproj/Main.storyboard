@@ -114,7 +114,7 @@
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="dLJ-vs-TUf" customClass="DetailViewController" customModule="Galactic_Holidays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YS8-P3-eyh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2O-ZG-raE" customClass="Button" customModule="Galactic_Holidays" customModuleProvider="target">
@@ -236,16 +236,16 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IO8-93-6y9">
                                                 <rect key="frame" x="20" y="410" width="335" height="50"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNz-Zs-SG0">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNz-Zs-SG0">
                                                         <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Customer rating" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNh-wK-Db8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer rating" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNh-wK-Db8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="14.333333333333334"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKR-35-SHc">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKR-35-SHc">
                                                                 <rect key="frame" x="0.0" y="22.333333333333371" width="159.66666666666666" height="27.666666666666671"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
@@ -263,16 +263,16 @@
                                                             <constraint firstItem="hKR-35-SHc" firstAttribute="top" secondItem="HNh-wK-Db8" secondAttribute="bottom" constant="8" id="iTk-Gm-Fd9"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-Dt-hlD">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-Dt-hlD">
                                                         <rect key="frame" x="169.66666666666663" y="0.0" width="165.33333333333337" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Average Distance" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA7-o0-oLS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Distance" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA7-o0-oLS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="165.33333333333334" height="14.333333333333334"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-2S-0B6">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-2S-0B6">
                                                                 <rect key="frame" x="0.0" y="22.333333333333371" width="165.33333333333334" height="27.666666666666671"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
@@ -398,118 +398,263 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="EYU-n9-CbM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wF9-n5-Bgb">
-                                        <rect key="frame" x="20" y="20" width="374" height="1056"/>
+                                        <rect key="frame" x="20" y="20" width="338.66666666666669" height="882"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxh-lK-Quu" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shipping Address Line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFP-9O-FSW" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="54" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shipping Address Line 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zew-wc-tnm" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="108" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shipping Address Line 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Zt-ZM-Uzh" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="162" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shipping City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9J-Aj-ONm" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="216" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shipping Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAR-h3-Jq8" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="270" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing Address Line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lJ-IE-qHk" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="324" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing Address Line 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTn-Qw-gP5" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="378" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing Address Line 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nzw-Bl-TIS" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="432" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUn-Nd-vI2" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="486" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xuT-Hd-nNf" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="540" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4t-1L-6IZ" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="594" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXX-Rv-ZQp" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="648" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-LD-WZ6" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="702" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiry" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="keI-X8-XjP" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="756" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cvv" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LiO-Cx-piz" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="810" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bank Acount Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dlg-oL-JiZ" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="864" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sort Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-ho-HJw" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="918" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ipz-ZD-Yea" customClass="TextField" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="972" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-Zr-h3g">
-                                                <rect key="frame" x="0.0" y="1026" width="374" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KVx-NB-Bb5">
+                                                <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Av-ix-8uX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxh-lK-Quu">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Name"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aOo-SF-zVi">
+                                                <rect key="frame" x="0.0" y="71" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPw-6Q-Pxd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lJ-IE-qHk">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Address Line 1"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wcD-wR-0r5">
+                                                <rect key="frame" x="0.0" y="142" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kco-7r-Ie8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTn-Qw-gP5">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Address Line 2"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pAW-7u-DF2">
+                                                <rect key="frame" x="0.0" y="213" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV9-8F-kXY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nzw-Bl-TIS">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Address Line 3"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="psx-3u-pnH">
+                                                <rect key="frame" x="0.0" y="284" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-WP-lhU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUn-Nd-vI2">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="City"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UTw-aB-SDw">
+                                                <rect key="frame" x="0.0" y="355" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Postcode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrc-Io-cby">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xuT-Hd-nNf">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Postcode"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8v7-I5-IUl">
+                                                <rect key="frame" x="0.0" y="426" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egc-Ff-K4H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4t-1L-6IZ">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Email"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UOh-6d-rtS">
+                                                <rect key="frame" x="0.0" y="497" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugD-8V-rYV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXX-Rv-ZQp">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Confirm Email"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QvZ-zM-1aI">
+                                                <rect key="frame" x="0.0" y="568" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6J-Rx-LgZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-LD-WZ6">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Card Number"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wCX-33-4l8">
+                                                <rect key="frame" x="0.0" y="639" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KC-uc-QeH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="keI-X8-XjP">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Expiry"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="83s-Qu-bkn">
+                                                <rect key="frame" x="0.0" y="710" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJX-KZ-c5v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LiO-Cx-piz">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="CVV"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-io-7BA">
+                                                <rect key="frame" x="0.0" y="781" width="338.66666666666669" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mf4-9h-BoL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.66666666666669" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="NO"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ipz-ZD-Yea">
+                                                        <rect key="frame" x="0.0" y="17" width="338.66666666666669" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Date of Birth"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-Zr-h3g">
+                                                <rect key="frame" x="0.0" y="852" width="338.66666666666669" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AN-6H-zDm" customClass="Button" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="164.33333333333334" height="30"/>
                                                         <state key="normal" title="Book"/>
                                                         <connections>
                                                             <action selector="bookPressed" destination="UV8-X2-a1P" eventType="touchUpInside" id="hCx-qt-7ie"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOA-JD-exp" customClass="Button" customModule="Galactic_Holidays" customModuleProvider="target">
-                                                        <rect key="frame" x="187" y="0.0" width="187" height="30"/>
+                                                        <rect key="frame" x="174.33333333333331" y="0.0" width="164.33333333333331" height="30"/>
                                                         <connections>
                                                             <action selector="clearPressed" destination="UV8-X2-a1P" eventType="touchUpInside" id="Ost-pK-V4S"/>
                                                         </connections>
@@ -519,11 +664,11 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="YFF-FB-sAB" firstAttribute="bottom" secondItem="wF9-n5-Bgb" secondAttribute="bottom" constant="20" id="HyW-Vd-38j"/>
                                     <constraint firstItem="wF9-n5-Bgb" firstAttribute="top" secondItem="YFF-FB-sAB" secondAttribute="top" constant="20" id="RYU-32-3bM"/>
-                                    <constraint firstItem="YFF-FB-sAB" firstAttribute="trailing" secondItem="wF9-n5-Bgb" secondAttribute="trailing" constant="-394" id="Tpm-hR-hVx"/>
+                                    <constraint firstItem="YFF-FB-sAB" firstAttribute="trailing" secondItem="wF9-n5-Bgb" secondAttribute="trailing" id="Tpm-hR-hVx"/>
                                     <constraint firstItem="wF9-n5-Bgb" firstAttribute="width" secondItem="LOv-zI-szN" secondAttribute="width" multiplier="0.903382" id="o1f-UB-hPA"/>
                                     <constraint firstItem="wF9-n5-Bgb" firstAttribute="leading" secondItem="YFF-FB-sAB" secondAttribute="leading" constant="20" id="zjO-Tk-pvB"/>
                                 </constraints>
@@ -537,18 +682,26 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXa-36-0eJ">
-                                            <rect key="frame" x="149" y="367.66666666666669" width="77" height="77"/>
+                                            <rect key="frame" x="139.33333333333334" y="350.33333333333331" width="96.666666666666657" height="111.33333333333331"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hEh-PX-2bB">
-                                                    <rect key="frame" x="20" y="20" width="37" height="37"/>
+                                                    <rect key="frame" x="29.666666666666657" y="20" width="37" height="37"/>
                                                 </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlc-Ue-DQ4">
+                                                    <rect key="frame" x="19.999999999999996" y="77" width="56.666666666666657" height="14.333333333333329"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="hEh-PX-2bB" secondAttribute="bottom" constant="20" id="8dE-KE-UGr"/>
-                                                <constraint firstItem="hEh-PX-2bB" firstAttribute="leading" secondItem="fXa-36-0eJ" secondAttribute="leading" constant="20" id="Ebd-eV-b0Z"/>
+                                                <constraint firstItem="Hlc-Ue-DQ4" firstAttribute="leading" secondItem="fXa-36-0eJ" secondAttribute="leading" constant="20" id="0uS-sc-pNJ"/>
+                                                <constraint firstItem="hEh-PX-2bB" firstAttribute="centerX" secondItem="fXa-36-0eJ" secondAttribute="centerX" id="7wB-9I-1CW"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hlc-Ue-DQ4" secondAttribute="bottom" constant="20" id="CYm-wR-XKR"/>
+                                                <constraint firstItem="Hlc-Ue-DQ4" firstAttribute="top" secondItem="hEh-PX-2bB" secondAttribute="bottom" constant="20" id="LQH-ip-Fux"/>
                                                 <constraint firstItem="hEh-PX-2bB" firstAttribute="top" secondItem="fXa-36-0eJ" secondAttribute="top" constant="20" id="Rko-UF-Asd"/>
-                                                <constraint firstAttribute="trailing" secondItem="hEh-PX-2bB" secondAttribute="trailing" constant="20" id="h2n-9W-2h6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hlc-Ue-DQ4" secondAttribute="trailing" constant="20" id="hAZ-uI-MQt"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -561,6 +714,7 @@
                             </visualEffectView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U4r-sR-5f0"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cJP-pn-6bf" firstAttribute="leading" secondItem="PNZ-JK-lUv" secondAttribute="leading" id="0Om-8F-uwa"/>
                             <constraint firstItem="EYU-n9-CbM" firstAttribute="top" secondItem="PNZ-JK-lUv" secondAttribute="top" id="1S3-H3-qeS"/>
@@ -583,14 +737,14 @@
                         <outlet property="loadingView" destination="cJP-pn-6bf" id="vu4-N5-tLG"/>
                         <outlet property="nameField" destination="Oxh-lK-Quu" id="b4A-yo-fui"/>
                         <outlet property="scrollView" destination="EYU-n9-CbM" id="7zS-ZO-TRy"/>
-                        <outlet property="sortCodeField" destination="QHy-ho-HJw" id="WbX-DS-Nh0"/>
+                        <outlet property="spinnerView" destination="fXa-36-0eJ" id="CUr-zk-eMh"/>
                         <outlet property="submit" destination="9AN-6H-zDm" id="8rk-RB-Ofw"/>
                         <segue destination="R9O-Sb-aq6" kind="show" identifier="bookingComplete" id="fb0-yg-TcP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DrL-aN-7lv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2681.1594202898555" y="127.90178571428571"/>
+            <point key="canvasLocation" x="2680.8000000000002" y="127.83251231527095"/>
         </scene>
         <!--Success View Controller-->
         <scene sceneID="pf3-Y5-97P">
