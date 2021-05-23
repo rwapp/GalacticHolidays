@@ -36,7 +36,7 @@ class HolidayData {
                                    distance: 55,
                                    temp: -125,
                                    rating: 5,
-                                   imageDescription: "A landscape photo of the surface of Mars. The image follows a large sandy ridge that snakes far into the distance. The yellow-y hues vary from brilliant white to a dark, dirty brown.")
+                                   imageDescription: "The surface of Mars.")
 
     private let jupiter = Destination(name: "Jupiter",
                                       subtitle: "Bringer of joy.",
@@ -55,7 +55,7 @@ class HolidayData {
                                      distance: 1200,
                                      temp: -178,
                                      rating: 3,
-                                     imageDescription: "")
+                                     imageDescription: "A quarter silhouette of Saturn.")
 
     private let uranus = Destination(name: "Uranus",
                                      subtitle: "No cheap jokes here, this app is cleaner than Uranus.",
