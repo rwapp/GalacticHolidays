@@ -27,12 +27,7 @@ class BookingViewController: UIViewController {
 
     private let timeoutInterval = 1200
     private lazy var timeoutRemaining = timeoutInterval
-
-    private var alert: CustomModalAlert? {
-        didSet {
-            oldValue?.removeFromSuperview()
-        }
-    }
+    private var resetsRemaining = 2
 
     private var formComplete: Bool = false {
         didSet {
@@ -64,8 +59,6 @@ class BookingViewController: UIViewController {
     }
 
     private func idleTimer() {
-
-
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] _ in
             guard let self = self else { return }
 
@@ -73,6 +66,7 @@ class BookingViewController: UIViewController {
 
             if self.timeoutRemaining == 0 {
                 self.showTimeout()
+                return
             }
 
             self.idleTimer()
@@ -98,19 +92,31 @@ class BookingViewController: UIViewController {
     }
 
     private func showTimeout() {
-        alert = CustomModalAlert(frame: view.frame)
-        alert!.delegate = self
-        alert!.message = "Timed out"
-        alert!.center = view.center
-        view.addSubview(alert!)
+
+        let alert = UIAlertController(title: "Timed out", message: nil, preferredStyle: .alert)
+
+        if resetsRemaining > 0 {
+            let continueButton = UIAlertAction(title: "Continue", style: .default) { [weak self] _ in
+                if let self = self {
+                    self.timeoutRemaining = self.timeoutInterval
+                    self.idleTimer()
+                    self.resetsRemaining -= 1
+                }
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(continueButton)
+        }
+
+        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(cancelButton)
+
+        present(alert, animated: true, completion: nil)
     }
 
     private func showFormError() {
-        alert = CustomModalAlert(frame: view.frame)
-        alert!.delegate = self
-        alert!.message = "There is an error in the form."
-        alert!.center = view.center
-        view.addSubview(alert!)
+
     }
 
     private func setupRefreshButton() {
@@ -248,14 +254,6 @@ extension BookingViewController: UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
-    }
-}
-
-extension BookingViewController: CustomModalAlertDelegate {
-    func dismiss() {
-        alert?.removeFromSuperview()
-        timer?.invalidate()
-        idleTimer()
     }
 }
 
