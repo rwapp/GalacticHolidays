@@ -30,7 +30,8 @@ class ListViewController: UIViewController {
 
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
-        title = "Destinations"
+        title = NSLocalizedString("LIST_VIEW.TITLE",
+                                  comment: "")
 
         setupCarousel()
     }
@@ -73,12 +74,14 @@ class ListViewController: UIViewController {
         let leftAttachment = NSTextAttachment()
         leftAttachment.image = UIImage(systemName: "chevron.left")?.withTintColor(.white)
         leftButton.setAttributedTitle(NSAttributedString(attachment: leftAttachment), for: .normal)
-        leftButton.accessibilityLabel = "Scroll left"
+        leftButton.accessibilityLabel = NSLocalizedString("LIST_VIEW.SCROLL_LEFT",
+                                                          comment: "")
 
         let rightAttachment = NSTextAttachment()
         rightAttachment.image = UIImage(systemName: "chevron.right")?.withTintColor(.white)
         rightButton.setAttributedTitle(NSAttributedString(attachment: rightAttachment), for: .normal)
-        rightButton.accessibilityLabel = "Scroll right"
+        rightButton.accessibilityLabel = NSLocalizedString("LIST_VIEW.SCROLL_RIGHT",
+                                                           comment: "")
     }
 
     @IBAction
@@ -131,7 +134,8 @@ extension ListViewController: UITableViewDataSource {
         let starAttachment = NSTextAttachment()
 
         if item.favourite {
-            cell.accessibilityValue = "Favourite destination"
+            cell.accessibilityValue = NSLocalizedString("LIST_VIEW.FAVOURITE_DESTINATION",
+                                                        comment: "")
             starAttachment.image = UIImage(systemName: "star.fill")?.withTintColor(.orange)
 
         } else {

@@ -240,13 +240,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer rating" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNh-wK-Db8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="25"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="14.333333333333334"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKR-35-SHc">
-                                                                <rect key="frame" x="0.0" y="33" width="159.66666666666666" height="17"/>
+                                                                <rect key="frame" x="0.0" y="22.333333333333371" width="159.66666666666666" height="27.666666666666671"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -267,13 +267,13 @@
                                                         <rect key="frame" x="169.66666666666663" y="0.0" width="165.33333333333337" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Distance" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA7-o0-oLS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="165.33333333333334" height="25"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="165.33333333333334" height="14.333333333333334"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-2S-0B6">
-                                                                <rect key="frame" x="0.0" y="33" width="165.33333333333334" height="17"/>
+                                                                <rect key="frame" x="0.0" y="22.333333333333371" width="165.33333333333334" height="27.666666666666671"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

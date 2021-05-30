@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B50854B3253DF3CD001D47D2 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50854B2253DF3CD001D47D2 /* BookingViewController.swift */; };
+		B50C72F22664011900F9B226 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B50C72F42664011900F9B226 /* Localizable.strings */; };
 		B51694BC2537684600423357 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51694BB2537684600423357 /* DetailViewController.swift */; };
 		B54B91AB265AD45B00951C43 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B91AA265AD45B00951C43 /* ReviewViewController.swift */; };
 		B54B91AD265AD4ED00951C43 /* CustomerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B91AC265AD4ED00951C43 /* CustomerData.swift */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		B50854B2253DF3CD001D47D2 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		B50C72F32664011900F9B226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B50C72F62664013100F9B226 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B51694BB2537684600423357 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B54B91AA265AD45B00951C43 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		B54B91AC265AD4ED00951C43 /* CustomerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerData.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 				B5A67F872537603300D256B1 /* Data */,
 				B5A67F7625375CBE00D256B1 /* Assets.xcassets */,
 				B5A67F7B25375CBE00D256B1 /* Info.plist */,
+				B50C72F42664011900F9B226 /* Localizable.strings */,
 			);
 			path = "Galactic Holidays";
 			sourceTree = "<group>";
@@ -178,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50C72F22664011900F9B226 /* Localizable.strings in Resources */,
 				B5A67F7A25375CBE00D256B1 /* LaunchScreen.storyboard in Resources */,
 				B5A67F7725375CBE00D256B1 /* Assets.xcassets in Resources */,
 				B5A67F7525375CB800D256B1 /* Main.storyboard in Resources */,
@@ -210,10 +215,19 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B50C72F42664011900F9B226 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B50C72F32664011900F9B226 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B5A67F7325375CB800D256B1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B5A67F7425375CB800D256B1 /* Base */,
+				B50C72F62664013100F9B226 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -51,7 +51,8 @@ class ReviewViewController: UIViewController {
     @IBAction func bookPressed() {
         loadingView.accessibilityViewIsModal = true
         spinnerView.isAccessibilityElement = true
-        spinnerView.accessibilityLabel = "Booking..."
+        spinnerView.accessibilityLabel = NSLocalizedString("REVIEW_SCREEN.BOOKING",
+                                                           comment: "")
         loadingView.isHidden = false
         UIAccessibility.post(notification: .screenChanged, argument: spinnerView)
         bookingTimer()
