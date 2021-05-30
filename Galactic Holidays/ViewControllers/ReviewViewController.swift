@@ -34,11 +34,13 @@ class ReviewViewController: UIViewController {
         addressLine2Label.text = customerData?.address2
         addressLine3Label.text = customerData?.address3
         cityLabel.text = customerData?.city
-        postcodeLabel.text = customerData?.postcode
+        postcodeLabel.attributedText = NSAttributedString(string: customerData?.postcode ?? "",
+                                                          attributes: [.accessibilitySpeechSpellOut: true])
         emailLabel.text = customerData?.email
         cardNumberLabel.text = customerData?.cardNo
         expiryLabel.text = customerData?.expiry
-        cvvLabel.text = customerData?.cvv
+        cvvLabel.attributedText = NSAttributedString(string: customerData?.cvv ?? "",
+                                                     attributes: [.accessibilitySpeechSpellOut: true])
         dobLabel.text = customerData?.dob
     }
 
