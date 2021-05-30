@@ -70,7 +70,7 @@ class HolidayData {
     private let neptune = Destination(name: "Neptune",
                                       subtitle: "The ultimate road trip.",
                                       price: 1000,
-                                      description: "Wear all the kool kids go to spend they're vacatoin time.",
+                                      description: "Even the god of the sea would find enough water sports to keep himself occupied on this blue planet.",
                                       distance: 2782,
                                       temp: -201,
                                       rating: 5,

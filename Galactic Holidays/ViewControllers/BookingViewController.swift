@@ -16,11 +16,15 @@ class BookingViewController: UIViewController {
     @IBOutlet weak private var cardNumberField: UITextField!
     @IBOutlet weak private var cvvField: UITextField!
     @IBOutlet weak private var dobField: UITextField!
-    @IBOutlet weak private var loadingView: UIView!
-    @IBOutlet weak private var spinnerView: UIView!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var clearButton: UIButton!
     @IBOutlet weak private var timeRemainingLabel: UILabel!
+    @IBOutlet weak private var address1Field: UITextField!
+    @IBOutlet weak private var address2Field: UITextField!
+    @IBOutlet weak private var address3Field: UITextField!
+    @IBOutlet weak private var cityField: UITextField!
+    @IBOutlet weak private var postcodeField: UITextField!
+    @IBOutlet weak private var expiryField: UITextField!
 
     private var timer: Timer?
     weak var activeField: UITextField?
@@ -29,16 +33,11 @@ class BookingViewController: UIViewController {
     private lazy var timeoutRemaining = timeoutInterval
     private var resetsRemaining = 2
 
-    private var formComplete: Bool = false {
-        didSet {
-            submit.isEnabled = formComplete
-        }
-    }
+    private var formComplete = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        submit.isEnabled = false
         eachTextField(view) {
             $0.delegate = self
         }
@@ -53,6 +52,7 @@ class BookingViewController: UIViewController {
                                                object: nil)
 
         idleTimer()
+        timeRemainingLabel.accessibilityTraits.insert(.updatesFrequently)
         setupRefreshButton()
 
         title = "Booking"
@@ -81,14 +81,6 @@ class BookingViewController: UIViewController {
         }
 
         self.timeRemainingLabel.text = "Time remaining: \(minutes):\(secondsString)"
-    }
-
-    private func bookingTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { [weak self] _ in
-            guard let self = self else { return }
-
-            self.performSegue(withIdentifier: "bookingComplete", sender: nil)
-        }
     }
 
     private func showTimeout() {
@@ -197,15 +189,6 @@ class BookingViewController: UIViewController {
         clearTextFields()
     }
 
-    private func processBooking() {
-        loadingView.accessibilityViewIsModal = true
-        spinnerView.isAccessibilityElement = true
-        spinnerView.accessibilityLabel = "Booking..."
-        loadingView.isHidden = false
-        UIAccessibility.post(notification: .screenChanged, argument: spinnerView)
-        bookingTimer()
-    }
-
     private func eachTextField(_ subview: UIView, _ action: (UITextField) -> Void) {
         for view in subview.subviews {
             if let textField = view as? UITextField {
@@ -245,6 +228,21 @@ class BookingViewController: UIViewController {
 
     private func timedOut() {
         navigationController?.popViewController(animated: true)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ReviewViewController else { return }
+        vc.customerData = CustomerData(name: nameField.text!,
+                                       address1: address1Field.text!,
+                                       address2: address2Field.text,
+                                       address3: address3Field.text,
+                                       city: cityField.text!,
+                                       postcode: postcodeField.text!,
+                                       email: emailField.text!,
+                                       cardNo: cardNumberField.text!,
+                                       expiry: expiryField.text!,
+                                       cvv: cvvField.text!,
+                                       dob: dobField.text!)
     }
 }
 
