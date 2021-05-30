@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Galactic Holidays
+
+  Created by Rob Whitaker on 30/05/2021.
+  
+*/
+
+
+"DETAIL_VIEW.DISTANCE_UNIT" = "M km";
+"DETAIL_VIEW.FAVOURITE_DESTINATION" = "Favourite destination";
+"DETAIL_VIEW.FAVOURITE_DESTINATION.INPUT_FAVOURITE" = "Favourite";
+"DETAIL_VIEW.FAVOURITE_DESTINATION.INPUT_LIKE" = "Like";
+"DETAIL_VIEW.FAVOURITE_DESTINATION.INPUT_STAR" = "Star";
+"DETAIL_VIEW.POPULAR_MESSAGE" = "Popular destination";
+"DETAIL_VIEW.LIMITED_MESSAGE" = "Only 5 remaining";
+"DETAIL_VIEW.CUSTOMER_RATING" = "Customer rating %d %@";
+"DETAIL_VIEW.STAR_SINGULAR" = "star";
+"DETAIL_VIEW.STAR_PLURAL" = "stars";
+"DETAIL_VIEW.AVERAGE_DISTANCE" = "Average distance %d million kilometres";
+
+"BOOKING_VIEW.TITlE" = "Booking";
+"BOOKING_VIEW.TIME_REMAINING" = "Time remaining: %d:%@";
+"BOOKING_VIEW.TIMEOUT_ALERT.TITLE" = "Timed out";
+"BOOKING_VIEW.TIMEOUT_ALERT.CONTINUE" = "Continue";
+"BOOKING_VIEW.TIMEOUT_ALERT.CANCEL" = "Cancel";
+"BOOKING_VIEW.RESET_FORM" = "Reset form";
+"BOOKING_VIEW.RESET_FORM.INPUT_RESET" = "Reset";
+"BOOKING_VIEW.RESET_FORM.INPUT_REFRESH" = "Refresh";
+"BOOKING_VIEW.RESET_FORM.INPUT_CLEAR" = "Clear";h
+"BOOKING_VIEW.RESET_FORM.INPUT_CLEAR_FORM" = "Clear form";
+"BOOKING_VIEW.RESET_FORM.INPUT_RESTART" = "Restart";
+"BOOKING_VIEW.NAME_ERROR" = "Please enter a name";
+"BOOKING_VIEW.ADDRESS_ERROR" = "Please enter a valid address";
+"BOOKING_VIEW.POSTCODE_ERROR" = "Please enter a valid post code";
+"BOOKING_VIEW.CVV_ERROR" = "Please enter a valid CVV";
+"BOOKING_VIEW.EMAIL_ERROR" = "Please enter a valid email";
+"BOOKING_VIEW.CONFIRM_EMAIL_ERROR" = "Ensure emails match";
+"BOOKING_VIEW.CARD_ERROR" = "Please check your card number";
+"BOOKING_VIEW.DOB_ERROR" = "Please enter a valid date of birth";
+"BOOKING_VIEW.EXPIRY_ERROR" = "Please enter a valid expiry date";
+
+"LIST_VIEW.TITLE" = "Destinations";
+"LIST_VIEW.SCROLL_LEFT" = "Scroll left";
+"LIST_VIEW.SCROLL_RIGHT" = "Scroll right";
+"LIST_VIEW.FAVOURITE_DESTINATION" = "Favourite destination";
+
+"SUCCESS_SCREEN.BOOKING_REF" = "Booking ref: ";
+"SUCCESS_SCREEN.GO_HOME" = "Go back home";
+"SUCCESS_SCREEN.GOING" = "You're going!";
+
+"REVIEW_SCREEN.BOOKING" = "Booking...";

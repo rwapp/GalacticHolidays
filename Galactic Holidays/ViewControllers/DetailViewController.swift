@@ -38,7 +38,7 @@ class DetailViewController: UIViewController {
         heroImage.image = UIImage(named: "\(destination.name)-hero")
         heroImage.accessibilityIgnoresInvertColors = true
 
-        distance.text = "\(destination.distance)M km"
+        distance.text = "\(destination.distance)\(NSLocalizedString("DETAIL_VIEW.DISTANCE_UNIT", comment: ""))"
         rating.attributedText = formattedRating()
 
         detail.text = destination.description
@@ -56,12 +56,15 @@ class DetailViewController: UIViewController {
         guard let destination = data?.holidays[selection ?? 0] else { return }
         let starAttachment = NSTextAttachment()
         starAttachment.image = UIImage(systemName: destination.favourite ? "star.fill" : "star")?.withTintColor(.orange)
-        let title = "Favourite destination"
+        let title = NSLocalizedString("DETAIL_VIEW.FAVOURITE_DESTINATION", comment: "")
         let buttonTitle = NSMutableAttributedString(string: "\(title): ")
         buttonTitle.append(NSAttributedString(attachment: starAttachment))
         likeButton.setAttributedTitle(buttonTitle, for: .normal)
         likeButton.accessibilityLabel = title
-        likeButton.accessibilityUserInputLabels = ["Favourite destination", "Favourite", "Like", "Star"]
+        likeButton.accessibilityUserInputLabels = [NSLocalizedString("DETAIL_VIEW.FAVOURITE_DESTINATION", comment: ""),
+                                                   NSLocalizedString("DETAIL_VIEW.FAVOURITE_DESTINATION.INPUT_FAVOURITE", comment: ""),
+                                                   NSLocalizedString("DETAIL_VIEW.FAVOURITE_DESTINATION.INPUT_LIKE", comment: ""),
+                                                   NSLocalizedString("DETAIL_VIEW.FAVOURITE_DESTINATION.INPUT_STAR", comment: "")]
 
         if destination.favourite {
             likeButton.accessibilityTraits.insert(.selected)
@@ -73,7 +76,7 @@ class DetailViewController: UIViewController {
     private func setupPopular() {
         guard let destination = data?.holidays[selection ?? 0] else { return }
         if destination.rating == 5 {
-            addMessage("Popular destination")
+            addMessage(NSLocalizedString("DETAIL_VIEW.POPULAR_MESSAGE", comment: ""))
         }
     }
 
@@ -82,7 +85,7 @@ class DetailViewController: UIViewController {
               destination.promo else { return }
 
         if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
-            addMessage("Only 5 remaining")
+            addMessage(NSLocalizedString("DETAIL_VIEW.LIMITED_MESSAGE", comment: ""))
         } else {
             promoView.layer.cornerRadius = 50
             promoView.isHidden = false
@@ -91,7 +94,8 @@ class DetailViewController: UIViewController {
 
     private func addMessage(_ string: String) {
         let warningAttachment = NSTextAttachment()
-        warningAttachment.image = UIImage(systemName: "exclamationmark.triangle")
+        let tintColour = traitCollection.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
+        warningAttachment.image = UIImage(systemName: "exclamationmark.triangle")?.withTintColor(tintColour)
         let message = NSMutableAttributedString(attachment: warningAttachment)
         message.append(NSAttributedString(string: " \(string)"))
         let label = UILabel()
@@ -107,10 +111,13 @@ class DetailViewController: UIViewController {
     private func setupContainers() {
         guard let destination = data?.holidays[selection ?? 0] else { return }
         ratingContainer.isAccessibilityElement = true
-        let stars = destination.rating > 1 ? "stars" : "star"
-        ratingContainer.accessibilityLabel = "Customer rating \(destination.rating) \(stars)"
+        let stars = destination.rating > 1 ? NSLocalizedString("DETAIL_VIEW.STAR_PLURAL", comment: "") : NSLocalizedString("DETAIL_VIEW.STAR_SINGULAR", comment: "")
+        ratingContainer.accessibilityLabel = String(format: NSLocalizedString("DETAIL_VIEW.CUSTOMER_RATING", comment: ""),
+                                                    destination.rating,
+                                                    stars)
         distanceContainer.isAccessibilityElement = true
-        distanceContainer.accessibilityLabel = "Average distance \(destination.distance) million kilometres"
+        distanceContainer.accessibilityLabel = String(format: NSLocalizedString("DETAIL_VIEW.AVERAGE_DISTANCE", comment: ""),
+                                                      destination.distance)
 
         if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
             detailStack.axis = .vertical
@@ -154,5 +161,17 @@ class DetailViewController: UIViewController {
         }
 
         return formatted
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        messageStack.subviews.forEach { label in
+            if let label = label as? UILabel,
+               let text = label.text {
+                label.removeFromSuperview()
+                addMessage(text)
+            }
+        }
     }
 }

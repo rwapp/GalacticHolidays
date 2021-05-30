@@ -22,19 +22,24 @@ class SuccessViewController: UIViewController {
         imageView.tintColor = .white
 
         let reference = "123ABC456"
-        let referenceString = NSMutableAttributedString(string: "Booking ref: ")
-        let attributedReference = NSAttributedString(string: reference, attributes: [.accessibilitySpeechSpellOut: true])
+        let referenceString = NSMutableAttributedString(string: NSLocalizedString("SUCCESS_SCREEN.BOOKING_REF",
+                                                                                  comment: ""))
+        let attributedReference = NSAttributedString(string: reference,
+                                                     attributes: [.accessibilitySpeechSpellOut: true])
         referenceString.append(attributedReference)
         referenceLabel.attributedText = referenceString
 
-        let backButtonTitle = NSAttributedString(string: "Go back home", attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
+        let backButtonTitle = NSAttributedString(string: NSLocalizedString("SUCCESS_SCREEN.GO_HOME",
+                                                                           comment: ""),
+                                                 attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
         backButton.titleLabel?.attributedText = backButtonTitle
         backButton.accessibilityTraits.insert(.link)
         backButton.accessibilityTraits.remove(.button)
 
         titleContainer.isAccessibilityElement = true
         titleContainer.accessibilityTraits.insert(.header)
-        titleContainer.accessibilityLabel = "You're going!"
+        titleContainer.accessibilityLabel = NSLocalizedString("SUCCESS_SCREEN.GOING",
+                                                              comment: "")
     }
 
     override func viewWillAppear(_ animated: Bool) {

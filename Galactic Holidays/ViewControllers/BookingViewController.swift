@@ -66,7 +66,7 @@ class BookingViewController: UIViewController {
         setupRefreshButton()
         setupForm()
 
-        title = "Booking"
+        title = NSLocalizedString("BOOKING_VIEW.TITlE", comment: "")
     }
 
     private func setupForm() {
@@ -100,15 +100,22 @@ class BookingViewController: UIViewController {
             secondsString.prepend("0")
         }
 
-        self.timeRemainingLabel.text = "Time remaining: \(minutes):\(secondsString)"
+        self.timeRemainingLabel.text = String(format: NSLocalizedString("BOOKING_VIEW.TIME_REMAINING",
+                                                                        comment: ""),
+                                              minutes,
+                                              secondsString)
     }
 
     private func showTimeout() {
 
-        let alert = UIAlertController(title: "Timed out", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("BOOKING_VIEW.TIMEOUT_ALERT.TITLE", comment: ""),
+                                      message: nil,
+                                      preferredStyle: .alert)
 
         if resetsRemaining > 0 {
-            let continueButton = UIAlertAction(title: "Continue", style: .default) { [weak self] _ in
+            let continueButton = UIAlertAction(title: NSLocalizedString("BOOKING_VIEW.TIMEOUT_ALERT.CONTINUE",
+                                                                        comment: ""),
+                                               style: .default) { [weak self] _ in
                 if let self = self {
                     self.timeoutRemaining = self.timeoutInterval
                     self.idleTimer()
@@ -119,7 +126,9 @@ class BookingViewController: UIViewController {
             alert.addAction(continueButton)
         }
 
-        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+        let cancelButton = UIAlertAction(title: NSLocalizedString("BOOKING_VIEW.TIMEOUT_ALERT.CANCEL",
+                                                                  comment: ""),
+                                         style: .destructive) { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         }
         alert.addAction(cancelButton)
@@ -132,8 +141,20 @@ class BookingViewController: UIViewController {
         refresh.image = UIImage(systemName: "arrow.clockwise")
 
         clearButton.setAttributedTitle(NSAttributedString(attachment: refresh), for: .normal)
-        clearButton.accessibilityLabel = "Reset form"
-        clearButton.accessibilityUserInputLabels = ["Reset form", "Reset", "Refresh", "Clear", "Clear form", "Restart"]
+        clearButton.accessibilityLabel = NSLocalizedString("BOOKING_VIEW.RESET_FORM",
+                                                           comment: "")
+        clearButton.accessibilityUserInputLabels = [NSLocalizedString("BOOKING_VIEW.RESET_FORM",
+                                                                      comment: ""),
+                                                    NSLocalizedString("BOOKING_VIEW.RESET_FORM.INPUT_RESET",
+                                                                      comment: ""),
+                                                    NSLocalizedString("BOOKING_VIEW.RESET_FORM.INPUT_REFRESH",
+                                                                      comment: ""),
+                                                    NSLocalizedString("BOOKING_VIEW.RESET_FORM.INPUT_CLEAR",
+                                                                      comment: ""),
+                                                    NSLocalizedString("BOOKING_VIEW.RESET_FORM.INPUT_CLEAR_FORM",
+                                                                      comment: ""),
+                                                    NSLocalizedString("BOOKING_VIEW.RESET_FORM.INPUT_RESTART",
+                                                                      comment: "")]
     }
 
     private func clearTextFields() {
@@ -180,7 +201,8 @@ class BookingViewController: UIViewController {
     private func checkName() -> Bool {
         if nameField.text?.count == 0 {
             errorField(nameField)
-            nameError.text = "Please enter a name"
+            nameError.text = NSLocalizedString("BOOKING_VIEW.NAME_ERROR",
+                                               comment: "")
             return false
         }
 
@@ -192,7 +214,8 @@ class BookingViewController: UIViewController {
     private func checkAddress() -> Bool {
         if address1Field.text?.count == 0 {
             errorField(address1Field)
-            addressError.text = "Please enter a valid address"
+            addressError.text = NSLocalizedString("BOOKING_VIEW.ADDRESS_ERROR",
+                                                  comment: "")
             return false
         }
 
@@ -204,7 +227,8 @@ class BookingViewController: UIViewController {
     private func checkPostcode() -> Bool {
         if postcodeField.text?.count ?? 0 < 4 {
             errorField(postcodeField)
-            postcodeError.text = "Please enter a valid post code"
+            postcodeError.text = NSLocalizedString("BOOKING_VIEW.POSTCODE_ERROR",
+                                                   comment: "")
             return false
         }
 
@@ -216,7 +240,8 @@ class BookingViewController: UIViewController {
     private func checkCVV() -> Bool {
         if cvvField.text?.count != 3 {
             errorField(cvvField)
-            cvvError.text = "Please enter a valid CVV"
+            cvvError.text = NSLocalizedString("BOOKING_VIEW.CVV_ERROR",
+                                              comment: "")
             return false
         }
 
@@ -228,7 +253,8 @@ class BookingViewController: UIViewController {
     private func checkEmailFormat() -> Bool {
         if !(emailField.text?.contains("@") ?? false) {
             errorField(emailField)
-            emailError.text = "Please enter a valid email"
+            emailError.text = NSLocalizedString("BOOKING_VIEW.EMAIL_ERROR",
+                                                comment: "")
             return false
         }
 
@@ -240,7 +266,8 @@ class BookingViewController: UIViewController {
     private func emailsMatch() -> Bool {
         if emailField.text != confirmEmailField.text {
             errorField(confirmEmailField)
-            confirmEmailError.text = "Ensure emails match"
+            confirmEmailError.text = NSLocalizedString("BOOKING_VIEW.CONFIRM_EMAIL_ERROR",
+                                                       comment: "")
             return false
         }
 
@@ -253,7 +280,8 @@ class BookingViewController: UIViewController {
         if cardNumberField.text?.count != 16 {
             // perform a Luhn check
             errorField(cardNumberField)
-            cardNumberError.text = "Please check your card number"
+            cardNumberError.text = NSLocalizedString("BOOKING_VIEW.CARD_ERROR",
+                                                     comment: "")
             return false
         }
 
@@ -266,7 +294,8 @@ class BookingViewController: UIViewController {
         if dobField.text?.count != 10 {
             // do some extra checks to ensure this is a valid date
             errorField(dobField)
-            dobError.text = "Please enter a valid date of birth"
+            dobError.text = NSLocalizedString("BOOKING_VIEW.DOB_ERROR",
+                                              comment: "")
             return false
         }
 
@@ -278,7 +307,8 @@ class BookingViewController: UIViewController {
     private func checkExpiry() -> Bool {
         if expiryField.text?.count != 5 {
             errorField(expiryField)
-            expiryError.text = "Please enter a valid expiry date"
+            expiryError.text = NSLocalizedString("BOOKING_VIEW.EXPIRY_ERROR",
+                                                 comment: "")
             return false
         }
 

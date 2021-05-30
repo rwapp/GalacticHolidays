@@ -1,0 +1,195 @@
+
+/* Class = "UILabel"; text = "Address Line 1"; ObjectID = "0IJ-0R-oVf"; */
+"0IJ-0R-oVf.text" = "Address Line 1";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1Di-LA-P1M"; */
+"1Di-LA-P1M.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "28q-qm-xLe"; */
+"28q-qm-xLe.text" = "Label";
+
+/* Class = "UITextField"; accessibilityLabel = "Address Line 1"; ObjectID = "3lJ-IE-qHk"; */
+"3lJ-IE-qHk.accessibilityLabel" = "Address Line 1";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "4Av-ix-8uX"; */
+"4Av-ix-8uX.text" = "Name";
+
+/* Class = "UILabel"; text = "Expiry Date (MM/YY)"; ObjectID = "4KC-uc-QeH"; */
+"4KC-uc-QeH.text" = "Expiry Date (MM/YY)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5XI-bb-Z6p"; */
+"5XI-bb-Z6p.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6gl-HT-dFc"; */
+"6gl-HT-dFc.text" = "Label";
+
+/* Class = "UILabel"; text = "Expiry"; ObjectID = "7Tz-4s-sL1"; */
+"7Tz-4s-sL1.text" = "Expiry";
+
+/* Class = "UINavigationItem"; title = "Review Booking"; ObjectID = "8d1-ob-ZtZ"; */
+"8d1-ob-ZtZ.title" = "Review Booking";
+
+/* Class = "UIButton"; normalTitle = "Book"; ObjectID = "9AN-6H-zDm"; */
+"9AN-6H-zDm.normalTitle" = "Book";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AkV-zg-V9S"; */
+"AkV-zg-V9S.text" = "Label";
+
+/* Class = "UILabel"; text = "Card Number"; ObjectID = "D3t-h4-5NQ"; */
+"D3t-h4-5NQ.text" = "Card Number";
+
+/* Class = "UILabel"; text = "Average Distance"; ObjectID = "EA7-o0-oLS"; */
+"EA7-o0-oLS.text" = "Average Distance";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Egc-Ff-K4H"; */
+"Egc-Ff-K4H.text" = "Email";
+
+/* Class = "UITextField"; accessibilityLabel = "16 Digit Card Number"; ObjectID = "Fr0-LD-WZ6"; */
+"Fr0-LD-WZ6.accessibilityLabel" = "16 Digit Card Number";
+
+/* Class = "UIButton"; normalTitle = "Book"; ObjectID = "GCW-Sk-Cd1"; */
+"GCW-Sk-Cd1.normalTitle" = "Book";
+
+/* Class = "UILabel"; text = "Customer rating"; ObjectID = "HNh-wK-Db8"; */
+"HNh-wK-Db8.text" = "Customer rating";
+
+/* Class = "UILabel"; text = "Address Line 3"; ObjectID = "HP7-PW-NGI"; */
+"HP7-PW-NGI.text" = "Address Line 3";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "I2Y-Ym-sRa"; */
+"I2Y-Ym-sRa.text" = "Label";
+
+/* Class = "UILabel"; text = "Address Line 2"; ObjectID = "IDW-BM-EX3"; */
+"IDW-BM-EX3.text" = "Address Line 2";
+
+/* Class = "UITextField"; accessibilityLabel = "Date of Birth (DD/MM/YYYY)"; ObjectID = "Ipz-ZD-Yea"; */
+"Ipz-ZD-Yea.accessibilityLabel" = "Date of Birth (DD/MM/YYYY)";
+
+/* Class = "UIButton"; normalTitle = "Go back home"; ObjectID = "Kc8-hB-3DI"; */
+"Kc8-hB-3DI.normalTitle" = "Go back home";
+
+/* Class = "UILabel"; text = "CVV"; ObjectID = "LJX-KZ-c5v"; */
+"LJX-KZ-c5v.text" = "CVV";
+
+/* Class = "UILabel"; text = "Postcode"; ObjectID = "LUl-Uf-NOw"; */
+"LUl-Uf-NOw.text" = "Postcode";
+
+/* Class = "UITextField"; accessibilityLabel = "CVV"; ObjectID = "LiO-Cx-piz"; */
+"LiO-Cx-piz.accessibilityLabel" = "CVV";
+
+/* Class = "UITextField"; accessibilityLabel = "Address Line 3"; ObjectID = "Nzw-Bl-TIS"; */
+"Nzw-Bl-TIS.accessibilityLabel" = "Address Line 3";
+
+/* Class = "UILabel"; text = "Booking..."; ObjectID = "O4v-G5-hOq"; */
+"O4v-G5-hOq.text" = "Booking...";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OET-tS-JQu"; */
+"OET-tS-JQu.text" = "Label";
+
+/* Class = "UILabel"; text = "Address Line 3"; ObjectID = "OV9-8F-kXY"; */
+"OV9-8F-kXY.text" = "Address Line 3";
+
+/* Class = "UITextField"; accessibilityLabel = "Name"; ObjectID = "Oxh-lK-Quu"; */
+"Oxh-lK-Quu.accessibilityLabel" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "PID-ON-qfB"; */
+"PID-ON-qfB.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "16 Digit Card Number"; ObjectID = "S6J-Rx-LgZ"; */
+"S6J-Rx-LgZ.text" = "16 Digit Card Number";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "S6v-1b-9Fd"; */
+"S6v-1b-9Fd.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SIN-vE-auR"; */
+"SIN-vE-auR.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SS3-zd-woC"; */
+"SS3-zd-woC.text" = "Label";
+
+/* Class = "UILabel"; text = "Address Line 1"; ObjectID = "WPw-6Q-Pxd"; */
+"WPw-6Q-Pxd.text" = "Address Line 1";
+
+/* Class = "UITextField"; accessibilityLabel = "Confirm Email"; ObjectID = "WXX-Rv-ZQp"; */
+"WXX-Rv-ZQp.accessibilityLabel" = "Confirm Email";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "Weg-WP-lhU"; */
+"Weg-WP-lhU.text" = "City";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Y1q-12-V1Y"; */
+"Y1q-12-V1Y.text" = "Label";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Zxe-ZS-1hu"; */
+"Zxe-ZS-1hu.text" = "Name";
+
+/* Class = "UITextField"; accessibilityLabel = "Email"; ObjectID = "a4t-1L-6IZ"; */
+"a4t-1L-6IZ.accessibilityLabel" = "Email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bJL-2S-0B6"; */
+"bJL-2S-0B6.text" = "Label";
+
+/* Class = "UITextField"; accessibilityLabel = "City"; ObjectID = "bUn-Nd-vI2"; */
+"bUn-Nd-vI2.accessibilityLabel" = "City";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "by3-2h-gP8"; */
+"by3-2h-gP8.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Book"; ObjectID = "f2O-ZG-raE"; */
+"f2O-ZG-raE.normalTitle" = "Book";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hKR-35-SHc"; */
+"hKR-35-SHc.text" = "Label";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "i95-Eh-AdP"; */
+"i95-Eh-AdP.text" = "City";
+
+/* Class = "UILabel"; text = "Address Line 2"; ObjectID = "kco-7r-Ie8"; */
+"kco-7r-Ie8.text" = "Address Line 2";
+
+/* Class = "UITextField"; accessibilityLabel = "Expiry Date (MM/YY)"; ObjectID = "keI-X8-XjP"; */
+"keI-X8-XjP.accessibilityLabel" = "Expiry Date (MM/YY)";
+
+/* Class = "UILabel"; text = "Date of Birth (DD/MM/YYYY)"; ObjectID = "mf4-9h-BoL"; */
+"mf4-9h-BoL.text" = "Date of Birth (DD/MM/YYYY)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nRd-9d-Z4z"; */
+"nRd-9d-Z4z.text" = "Label";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "oEM-3I-vc4"; */
+"oEM-3I-vc4.text" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "pza-ec-AIg"; */
+"pza-ec-AIg.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Booking ref: 123ABC456"; ObjectID = "qRF-GE-xV6"; */
+"qRF-GE-xV6.text" = "Booking ref: 123ABC456";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "sy8-YS-5Qb"; */
+"sy8-YS-5Qb.text" = "Date of Birth";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tc9-mb-jvD"; */
+"tc9-mb-jvD.text" = "Label";
+
+/* Class = "UILabel"; text = "You're going!"; ObjectID = "uHi-ow-Ae7"; */
+"uHi-ow-Ae7.text" = "You're going!";
+
+/* Class = "UILabel"; text = "CVV"; ObjectID = "uR8-ap-DPQ"; */
+"uR8-ap-DPQ.text" = "CVV";
+
+/* Class = "UILabel"; text = "Confirm Email"; ObjectID = "ugD-8V-rYV"; */
+"ugD-8V-rYV.text" = "Confirm Email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vFb-GA-Qza"; */
+"vFb-GA-Qza.text" = "Label";
+
+/* Class = "UITextField"; accessibilityLabel = "Address Line 2"; ObjectID = "vTn-Qw-gP5"; */
+"vTn-Qw-gP5.accessibilityLabel" = "Address Line 2";
+
+/* Class = "UILabel"; text = "Only 5 remaining"; ObjectID = "xRv-xb-Uqu"; */
+"xRv-xb-Uqu.text" = "Only 5 remaining";
+
+/* Class = "UITextField"; accessibilityLabel = "Postcode"; ObjectID = "xuT-Hd-nNf"; */
+"xuT-Hd-nNf.accessibilityLabel" = "Postcode";
+
+/* Class = "UILabel"; text = "Postcode"; ObjectID = "yrc-Io-cby"; */
+"yrc-Io-cby.text" = "Postcode";
