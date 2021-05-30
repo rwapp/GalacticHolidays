@@ -32,8 +32,6 @@ class ListViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         title = "Destinations"
 
-
-
         setupCarousel()
     }
 

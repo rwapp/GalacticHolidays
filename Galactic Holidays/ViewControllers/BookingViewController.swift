@@ -10,36 +10,44 @@ import UIKit
 class BookingViewController: UIViewController {
 
     @IBOutlet weak private var submit: UIButton!
-    @IBOutlet weak private var emailField: TextField!
-    @IBOutlet weak private var confirmEmailField: TextField!
-    @IBOutlet weak private var nameField: TextField!
-    @IBOutlet weak private var cardNumberField: TextField!
-    @IBOutlet weak private var cvvField: TextField!
-    @IBOutlet weak private var sortCodeField: TextField!
-    @IBOutlet weak private var dobField: TextField!
-    @IBOutlet weak private var loadingView: UIView!
+    @IBOutlet weak private var emailField: UITextField!
+    @IBOutlet weak private var confirmEmailField: UITextField!
+    @IBOutlet weak private var nameField: UITextField!
+    @IBOutlet weak private var cardNumberField: UITextField!
+    @IBOutlet weak private var cvvField: UITextField!
+    @IBOutlet weak private var dobField: UITextField!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var clearButton: UIButton!
+    @IBOutlet weak private var timeRemainingLabel: UILabel!
+    @IBOutlet weak private var address1Field: UITextField!
+    @IBOutlet weak private var address2Field: UITextField!
+    @IBOutlet weak private var address3Field: UITextField!
+    @IBOutlet weak private var cityField: UITextField!
+    @IBOutlet weak private var postcodeField: UITextField!
+    @IBOutlet weak private var expiryField: UITextField!
+    @IBOutlet weak private var nameError: UILabel!
+    @IBOutlet weak private var addressError: UILabel!
+    @IBOutlet weak private var cityError: UILabel!
+    @IBOutlet weak private var postcodeError: UILabel!
+    @IBOutlet weak private var emailError: UILabel!
+    @IBOutlet weak private var confirmEmailError: UILabel!
+    @IBOutlet weak private var cardNumberError: UILabel!
+    @IBOutlet weak private var expiryError: UILabel!
+    @IBOutlet weak private var cvvError: UILabel!
+    @IBOutlet weak private var dobError: UILabel!
 
     private var timer: Timer?
     weak var activeField: UITextField?
 
-    private var alert: CustomModalAlert? {
-        didSet {
-            oldValue?.removeFromSuperview()
-        }
-    }
+    private let timeoutInterval = 1200
+    private lazy var timeoutRemaining = timeoutInterval
+    private var resetsRemaining = 2
 
-    private var formComplete: Bool = false {
-        didSet {
-            submit.isEnabled = formComplete
-        }
-    }
+    private var formComplete = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        submit.isEnabled = false
         eachTextField(view) {
             $0.delegate = self
         }
@@ -54,41 +62,69 @@ class BookingViewController: UIViewController {
                                                object: nil)
 
         idleTimer()
+        timeRemainingLabel.accessibilityTraits.insert(.updatesFrequently)
         setupRefreshButton()
+        setupForm()
+
+        title = "Booking"
+    }
+
+    private func setupForm() {
+        cvvField.keyboardType = .numberPad
+        cardNumberField.keyboardType = .numberPad
+        emailField.keyboardType = .emailAddress
+        confirmEmailField.keyboardType = .emailAddress
+        dobField.keyboardType = .numberPad
+        expiryField.keyboardType = .numberPad
     }
 
     private func idleTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: false) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] _ in
             guard let self = self else { return }
 
-            self.showTimeout()
-            self.clearTextFields()
-        }
-    }
+            self.timeoutRemaining -= 1
 
-    private func bookingTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { [weak self] _ in
-            guard let self = self else { return }
+            if self.timeoutRemaining == 0 {
+                self.showTimeout()
+                return
+            }
 
-            self.loadingView.isHidden = false
-            self.performSegue(withIdentifier: "bookingComplete", sender: nil)
+            self.idleTimer()
         }
+
+        let minutes: Int = timeoutRemaining / 60
+        let seconds: Int = timeoutRemaining % 60
+
+        var secondsString = "\(seconds)"
+        if secondsString.count == 1 {
+            secondsString.prepend("0")
+        }
+
+        self.timeRemainingLabel.text = "Time remaining: \(minutes):\(secondsString)"
     }
 
     private func showTimeout() {
-        alert = CustomModalAlert(frame: view.frame)
-        alert!.delegate = self
-        alert!.message = "Timed out"
-        alert!.center = view.center
-        view.addSubview(alert!)
-    }
 
-    private func showFormError() {
-        alert = CustomModalAlert(frame: view.frame)
-        alert!.delegate = self
-        alert!.message = "There is an error in the form."
-        alert!.center = view.center
-        view.addSubview(alert!)
+        let alert = UIAlertController(title: "Timed out", message: nil, preferredStyle: .alert)
+
+        if resetsRemaining > 0 {
+            let continueButton = UIAlertAction(title: "Continue", style: .default) { [weak self] _ in
+                if let self = self {
+                    self.timeoutRemaining = self.timeoutInterval
+                    self.idleTimer()
+                    self.resetsRemaining -= 1
+                }
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(continueButton)
+        }
+
+        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(cancelButton)
+
+        present(alert, animated: true, completion: nil)
     }
 
     private func setupRefreshButton() {
@@ -96,6 +132,8 @@ class BookingViewController: UIViewController {
         refresh.image = UIImage(systemName: "arrow.clockwise")
 
         clearButton.setAttributedTitle(NSAttributedString(attachment: refresh), for: .normal)
+        clearButton.accessibilityLabel = "Reset form"
+        clearButton.accessibilityUserInputLabels = ["Reset form", "Reset", "Refresh", "Clear", "Clear form", "Restart"]
     }
 
     private func clearTextFields() {
@@ -117,34 +155,143 @@ class BookingViewController: UIViewController {
     }
 
     private func checkFormValid() -> Bool {
-        guard let email = emailField.text,
-              let confirmEmail = confirmEmailField.text,
-              let name = nameField.text,
-              let cardNumber = cardNumberField.text,
-              let cvv = cvvField.text,
-              let sortCode = sortCodeField.text,
-              let dob = dobField.text else { return false }
 
-        if email != confirmEmail { return false }
-        if !email.contains("@") { return false }
-        if !confirmEmail.contains("@") { return false }
+        let name = checkName()
+        let address = checkAddress()
+        let postcode = checkPostcode()
+        let emailFormat = checkEmailFormat()
+        let emailsMatch = emailsMatch()
+        let cardNumber = checkCardNumber()
+        let dob = checkDOB()
+        let cvv = checkCVV()
+        let expiry = checkExpiry()
 
-        if name.count < 3 { return false }
+        return emailsMatch &&
+            emailFormat &&
+            cardNumber &&
+            dob &&
+            cvv &&
+            expiry &&
+            name &&
+            address &&
+            postcode
+    }
 
-        if cardNumber.count != 16 { return false }
+    private func checkName() -> Bool {
+        if nameField.text?.count == 0 {
+            errorField(nameField)
+            nameError.text = "Please enter a name"
+            return false
+        }
 
-        if cvv.count != 3 { return false }
-        if cvv.rangeOfCharacter(from: .lowercaseLetters) != .none { return false }
-
-        if sortCode.count != 8 { return false }
-        if !charAt(location: 2, is: "-", in: sortCode) { return false }
-        if !charAt(location: 5, is: "-", in: sortCode) { return false }
-
-        if dob.count != 10 { return false }
-        if !charAt(location: 2, is: "/", in: dob) { return false }
-        if !charAt(location: 5, is: "/", in: dob) { return false }
-
+        nameError.text = nil
+        errorField(nameField, clear: true)
         return true
+    }
+
+    private func checkAddress() -> Bool {
+        if address1Field.text?.count == 0 {
+            errorField(address1Field)
+            addressError.text = "Please enter a valid address"
+            return false
+        }
+
+        errorField(address1Field, clear: true)
+        addressError.text = nil
+        return true
+    }
+
+    private func checkPostcode() -> Bool {
+        if postcodeField.text?.count ?? 0 < 4 {
+            errorField(postcodeField)
+            postcodeError.text = "Please enter a valid post code"
+            return false
+        }
+
+        errorField(postcodeField, clear: true)
+        postcodeError.text = nil
+        return true
+    }
+
+    private func checkCVV() -> Bool {
+        if cvvField.text?.count != 3 {
+            errorField(cvvField)
+            cvvError.text = "Please enter a valid CVV"
+            return false
+        }
+
+        cvvError.text = nil
+        errorField(cvvField, clear: true)
+        return true
+    }
+
+    private func checkEmailFormat() -> Bool {
+        if !(emailField.text?.contains("@") ?? false) {
+            errorField(emailField)
+            emailError.text = "Please enter a valid email"
+            return false
+        }
+
+        errorField(emailField, clear: true)
+        emailError.text = nil
+        return true
+    }
+
+    private func emailsMatch() -> Bool {
+        if emailField.text != confirmEmailField.text {
+            errorField(confirmEmailField)
+            confirmEmailError.text = "Ensure emails match"
+            return false
+        }
+
+        confirmEmailError.text = nil
+        errorField(confirmEmailField, clear: true)
+        return true
+    }
+
+    private func checkCardNumber() -> Bool {
+        if cardNumberField.text?.count != 16 {
+            // perform a Luhn check
+            errorField(cardNumberField)
+            cardNumberError.text = "Please check your card number"
+            return false
+        }
+
+        cardNumberError.text = nil
+        errorField(cardNumberField, clear: true)
+        return true
+    }
+
+    private func checkDOB() -> Bool {
+        if dobField.text?.count != 10 {
+            // do some extra checks to ensure this is a valid date
+            errorField(dobField)
+            dobError.text = "Please enter a valid date of birth"
+            return false
+        }
+
+        dobError.text = nil
+        errorField(dobField, clear: true)
+        return true
+    }
+
+    private func checkExpiry() -> Bool {
+        if expiryField.text?.count != 5 {
+            errorField(expiryField)
+            expiryError.text = "Please enter a valid expiry date"
+            return false
+        }
+
+        expiryError.text = nil
+        errorField(expiryField, clear: true)
+        return true
+    }
+
+    private func errorField(_ textField: UITextField, clear: Bool = false) {
+        textField.layer.cornerRadius = 8.0
+        textField.layer.masksToBounds = true
+        textField.layer.borderColor = clear ? UIColor.clear.cgColor : UIColor.red.cgColor
+        textField.layer.borderWidth = 1.0
     }
 
     private func charAt(location: Int, is character: Character, in string: String) -> Bool {
@@ -156,10 +303,36 @@ class BookingViewController: UIViewController {
     private func bookPressed() {
         if checkFormValid() {
             timer?.invalidate()
-            processBooking()
+            performSegue(withIdentifier: "reviewBooking", sender: nil)
         } else {
-            showFormError()
+            voFocusError()
         }
+    }
+
+    private func voFocusError() {
+        var field: UILabel?
+
+        if nameError.text != nil {
+            field = nameError
+        } else if addressError.text != nil {
+            field = addressError
+        } else if postcodeError.text != nil {
+            field = postcodeError
+        } else if emailError.text != nil {
+            field = emailError
+        } else if confirmEmailError.text != nil {
+            field = confirmEmailError
+        } else if cardNumberError.text != nil {
+            field = cardNumberError
+        } else if expiryError.text != nil {
+            field = expiryError
+        } else if cvvError.text != nil {
+            field = cvvError
+        } else {
+            field = dobError
+        }
+
+        UIAccessibility.post(notification: .layoutChanged, argument: field)
     }
 
     @IBAction
@@ -167,14 +340,9 @@ class BookingViewController: UIViewController {
         clearTextFields()
     }
 
-    private func processBooking() {
-        loadingView.isHidden = false
-        bookingTimer()
-    }
-
-    private func eachTextField(_ subview: UIView, _ action: (TextField) -> Void) {
+    private func eachTextField(_ subview: UIView, _ action: (UITextField) -> Void) {
         for view in subview.subviews {
-            if let textField = view as? TextField {
+            if let textField = view as? UITextField {
                 action(textField)
             } else {
                 eachTextField(view, action)
@@ -187,7 +355,7 @@ class BookingViewController: UIViewController {
         guard let keyboardRect: CGRect = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else { return }
         let keyboardHeight = keyboardRect.size.height
 
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight + 60, right: 0)
         scrollView.contentInset = insets
         scrollView.scrollIndicatorInsets = insets
 
@@ -212,23 +380,97 @@ class BookingViewController: UIViewController {
     private func timedOut() {
         navigationController?.popViewController(animated: true)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ReviewViewController else { return }
+        vc.customerData = CustomerData(name: nameField.text!,
+                                       address1: address1Field.text!,
+                                       address2: address2Field.text,
+                                       address3: address3Field.text,
+                                       city: cityField.text!,
+                                       postcode: postcodeField.text!,
+                                       email: emailField.text!,
+                                       cardNo: cardNumberField.text!,
+                                       expiry: expiryField.text!,
+                                       cvv: cvvField.text!,
+                                       dob: dobField.text!)
+    }
 }
 
 extension BookingViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        checkFormComplete()
-        activeField = nil
-    }
-
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        if string.count == 0 {
+            // delete
+            return true
+        }
+
+        if textField == cvvField {
+            if string.rangeOfCharacter(from: .decimalDigits) == .none {
+                return false
+            }
+            
+            if textField.text?.count ?? 0 >= 3 {
+                return false
+            }
+        }
+
+        if textField == cardNumberField {
+            if string.rangeOfCharacter(from: .decimalDigits) == .none {
+                return false
+            }
+
+            if textField.text?.count ?? 0 >= 16 {
+                return false
+            }
+        }
+
+        if textField == expiryField {
+
+            if string.rangeOfCharacter(from: .decimalDigits) == .none {
+                return false
+            }
+
+            let count = textField.text?.count ?? 0
+
+            switch count {
+            case 2:
+                textField.text = textField.text! + "/"
+            case 5:
+                return false
+            default:
+                break
+            }
+        }
+
+        if textField == dobField {
+
+            if string.rangeOfCharacter(from: .decimalDigits) == .none {
+                return false
+            }
+
+            let count = textField.text?.count ?? 0
+
+            switch count {
+            case 2, 5:
+                textField.text = textField.text! + "/"
+            case 10:
+                return false
+            default:
+                break
+            }
+        }
+
+        return true
+    }
 }
 
-extension BookingViewController: CustomModalAlertDelegate {
-    func dismiss() {
-        alert?.removeFromSuperview()
-        timer?.invalidate()
-        idleTimer()
+private extension String {
+    mutating func prepend(_ string: String) {
+        self = "\(string)\(self)"
     }
 }
