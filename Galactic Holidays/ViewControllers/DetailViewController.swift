@@ -91,7 +91,8 @@ class DetailViewController: UIViewController {
 
     private func addMessage(_ string: String) {
         let warningAttachment = NSTextAttachment()
-        warningAttachment.image = UIImage(systemName: "exclamationmark.triangle")
+        let tintColour = traitCollection.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
+        warningAttachment.image = UIImage(systemName: "exclamationmark.triangle")?.withTintColor(tintColour)
         let message = NSMutableAttributedString(attachment: warningAttachment)
         message.append(NSAttributedString(string: " \(string)"))
         let label = UILabel()
@@ -154,5 +155,17 @@ class DetailViewController: UIViewController {
         }
 
         return formatted
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        messageStack.subviews.forEach { label in
+            if let label = label as? UILabel,
+               let text = label.text {
+                label.removeFromSuperview()
+                addMessage(text)
+            }
+        }
     }
 }

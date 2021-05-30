@@ -104,6 +104,12 @@ class ListViewController: UIViewController {
                               at: .centeredHorizontally,
                               animated: true)
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        holidaysTable.reloadData()
+    }
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -129,8 +135,9 @@ extension ListViewController: UITableViewDataSource {
             starAttachment.image = UIImage(systemName: "star.fill")?.withTintColor(.orange)
 
         } else {
+            let tintColour = traitCollection.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
             cell.accessibilityValue = ""
-            starAttachment.image = UIImage(systemName: "star")?.withTintColor(.black)
+            starAttachment.image = UIImage(systemName: "star")?.withTintColor(tintColour)
         }
 
         let detail = NSMutableAttributedString(attachment: starAttachment)

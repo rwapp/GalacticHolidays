@@ -17,11 +17,25 @@ class Button: UIButton {
         border.frame = self.bounds
         border.fillColor = nil
         border.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
-        self.layer.addSublayer(border)
+        layer.addSublayer(border)
         border.strokeColor = UIColor(named: "brand")?.cgColor
+        setBackgroundImage(image(withColor: .white), for: .normal)
 
-        self.layer.cornerRadius = cornerRadius
-        self.layer.masksToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
+    }
 
+    private func image(withColor color: UIColor) -> UIImage? {
+        let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return image
     }
 }
