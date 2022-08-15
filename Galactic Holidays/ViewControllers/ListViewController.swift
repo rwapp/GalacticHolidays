@@ -28,6 +28,12 @@ class ListViewController: UIViewController {
         holidaysTable.register(UINib(nibName: "PlanetTableViewCell", bundle: nil), forCellReuseIdentifier: "planetCell")
         holidaysTable.tableFooterView = UIView()
 
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "brand")
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
         title = NSLocalizedString("LIST_VIEW.TITLE",

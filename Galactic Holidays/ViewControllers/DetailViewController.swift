@@ -153,11 +153,13 @@ class DetailViewController: UIViewController {
         let formatted = NSMutableAttributedString()
         for _ in 0..<destination.rating {
             formatted.append(starFillString)
+            formatted.append(NSAttributedString(string: " "))
         }
 
         let padding = 5 - destination.rating
         for _ in 0..<padding {
             formatted.append(starString)
+            formatted.append(NSAttributedString(string: " "))
         }
 
         return formatted
